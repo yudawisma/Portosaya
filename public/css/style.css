@@ -1,0 +1,20 @@
+.hover-card {
+  transition: transform 0.3s ease-in-out;
+}
+.hover-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.overlay-content {
+  background: linear-gradient(0deg, rgba(2,2,46,0.6) 0%, rgba(255,255,255,0) 100%);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.hover-card:hover .overlay-content {
+  opacity: 1;
+}
+.fixed-card-img {
+  height: 400px; /* atur sesuai kebutuhan */
+  object-fit: cover;
+}

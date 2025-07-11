@@ -24,5 +24,15 @@ Route::get('/', function () {
 
 
 
+Route::get('/fix', function () {
+    try {
+        exec('chmod -R 775 storage bootstrap/cache');
+        return '✅ Permission fixed!';
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
+});
+
+
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 

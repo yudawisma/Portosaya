@@ -82,6 +82,22 @@
           </div>
         </div>
       </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{{ asset('img/siba.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Buku">
+          <div class="card-body">
+            <h5 class="card-title">SIBa</h5>
+            <p class="card-text">Website Organisasi dan Pembelajaran masyarakat</p>
+            <span class="badge bg-secondary">Bootstrap</span>
+            <span class="badge bg-secondary">Laravel</span>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalIQ">Preview</button>
+            <!-- <a href="https://github.com/yudawisma/toko-buku-java" target="_blank" class="btn btn-sm btn-outline-dark">GitHub</a> -->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

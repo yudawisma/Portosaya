@@ -88,3 +88,21 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalIQ" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Preview – SIBa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{{ asset('img/sb.jpg') }}" class="img-fluid rounded shadow mb-4" alt="Preview Iquiz">
+                <p><strong>SIBa</strong> adalah Website untuk mengelola Organisasi , Kurikulum untuk masyarakat khususnya Ibu - Ibu untuk belajar inovasi - inovasi.</p>
+                <span class="badge bg-info text-dark">Bootstrap</span>
+                <span class="badge bg-dark">Laravel</span>
+               
+            </div>
+        </div>
+    </div>
+</div>

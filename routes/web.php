@@ -24,14 +24,22 @@ Route::get('/', function () {
 
 
 
-Route::get('/fix', function () {
+Route::get('/init-log', function () {
+    $logPath = storage_path('logs/laravel.log');
     try {
-        exec('chmod -R 775 storage bootstrap/cache');
-        return '✅ Permission fixed!';
+        if (!file_exists(dirname($logPath))) {
+            mkdir(dirname($logPath), 0775, true);
+        }
+        if (!file_exists($logPath)) {
+            file_put_contents($logPath, '');
+        }
+        chmod($logPath, 0775);
+        return '✅ Log file initialized.';
     } catch (\Exception $e) {
-        return response()->json(['error' => $e->getMessage()], 500);
+        return '❌ Error: ' . $e->getMessage();
     }
 });
+
 
 
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

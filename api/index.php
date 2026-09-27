@@ -1,9 +1,18 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Contracts\Http\Kernel;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
-$app->handleRequest(
-    Illuminate\Http\Request::capture()
+$kernel = $app->make(Kernel::class);
+
+$response = $kernel->handle(
+    $request = Request::capture()
 );
+
+$response->send();
+
+$kernel->terminate($request, $response);

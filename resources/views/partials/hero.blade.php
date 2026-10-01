@@ -119,7 +119,7 @@
                     <div class="hero-image-wrapper">
 
                         <img
-                            src="{{ asset('img/pas foto.jpeg') }}"
+                            src="{{ asset('img/pas foto.JPG') }}"
                             alt="Yudha Wisma Wardani"
                             class="hero-image"
                         >

@@ -2,7 +2,6 @@
 
     <div class="container">
 
-
         <div class="skills-header">
 
             <div>
@@ -41,7 +40,9 @@
         <div class="row g-4">
 
 
-            <!-- Programming -->
+            {{-- =====================================================
+                01 — PROGRAMMING
+            ====================================================== --}}
 
             <div class="col-md-6 col-lg-4">
 
@@ -61,20 +62,41 @@
 
 
                     <h3>
-
                         Programming
-
                     </h3>
 
 
                     <div class="skill-tags">
 
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>PHP</span>
-                        <span>Dart</span>
-                        <span>Python</span>
+                        <span>
+                            <iconify-icon icon="logos:html-5"></iconify-icon>
+                            HTML
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:css-3"></iconify-icon>
+                            CSS
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:javascript"></iconify-icon>
+                            JavaScript
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:php"></iconify-icon>
+                            PHP
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:dart"></iconify-icon>
+                            Dart
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:python"></iconify-icon>
+                            Python
+                        </span>
 
                     </div>
 
@@ -84,7 +106,9 @@
 
 
 
-            <!-- Framework -->
+            {{-- =====================================================
+                02 — FRAMEWORK
+            ====================================================== --}}
 
             <div class="col-md-6 col-lg-4">
 
@@ -104,18 +128,31 @@
 
 
                     <h3>
-
                         Framework
-
                     </h3>
 
 
                     <div class="skill-tags">
 
-                        <span>Laravel</span>
-                        <span>React</span>
-                        <span>Flutter</span>
-                        <span>Vue</span>
+                        <span>
+                            <iconify-icon icon="logos:laravel"></iconify-icon>
+                            Laravel
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:react"></iconify-icon>
+                            React
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:flutter"></iconify-icon>
+                            Flutter
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:vue"></iconify-icon>
+                            Vue
+                        </span>
 
                     </div>
 
@@ -125,49 +162,50 @@
 
 
 
-            <!-- AI -->
-
+            {{-- 03 — AI & AUTOMATION --}}
             <div class="col-md-6 col-lg-4">
-
                 <div class="skill-card">
-
                     <div class="skill-card-header">
-
                         <div class="skill-icon">
-
                             <i class="bi bi-cpu"></i>
-
                         </div>
-
                         <span>03</span>
-
                     </div>
 
-
-                    <h3>
-
-                        AI & Automation
-
-                    </h3>
-
+                    <h3>AI & Automation</h3>
 
                     <div class="skill-tags">
 
-                        <span>n8n</span>
-                        <span>Google Gemini AI</span>
-                        <span>AI Agent</span>
-                        <span>Webhook</span>
-                        <span>API</span>
+                        <span>
+                            <iconify-icon icon="mdi:robot-outline"></iconify-icon>
+                            AI Agent
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:n8n"></iconify-icon>
+                            n8n
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="simple-icons:openai"></iconify-icon>
+                            ChatGPT
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="simple-icons:googlegemini"></iconify-icon>
+                            Google Gemini
+                        </span>
+
 
                     </div>
-
                 </div>
-
             </div>
 
 
 
-            <!-- Database -->
+            {{-- =====================================================
+                04 — DATABASE
+            ====================================================== --}}
 
             <div class="col-md-6 col-lg-4">
 
@@ -187,15 +225,16 @@
 
 
                     <h3>
-
                         Database
-
                     </h3>
 
 
                     <div class="skill-tags">
 
-                        <span>MySQL</span>
+                        <span>
+                            <iconify-icon icon="logos:mysql"></iconify-icon>
+                            MySQL
+                        </span>
 
                     </div>
 
@@ -205,7 +244,9 @@
 
 
 
-            <!-- Tools -->
+            {{-- =====================================================
+                05 — DEVELOPMENT TOOLS
+            ====================================================== --}}
 
             <div class="col-md-6 col-lg-4">
 
@@ -225,18 +266,31 @@
 
 
                     <h3>
-
                         Development Tools
-
                     </h3>
 
 
                     <div class="skill-tags">
 
-                        <span>GitHub</span>
-                        <span>Figma</span>
-                        <span>Postman</span>
-                        <span>VS Code</span>
+                        <span>
+                            <iconify-icon icon="logos:github-icon"></iconify-icon>
+                            GitHub
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:figma"></iconify-icon>
+                            Figma
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:postman"></iconify-icon>
+                            Postman
+                        </span>
+
+                        <span>
+                            <iconify-icon icon="logos:visual-studio-code"></iconify-icon>
+                            VS Code
+                        </span>
 
                     </div>
 
@@ -246,42 +300,28 @@
 
 
 
-            <!-- Productivity -->
-
+            {{-- 06 — MICROSOFT OFFICE --}}
             <div class="col-md-6 col-lg-4">
-
                 <div class="skill-card">
 
                     <div class="skill-card-header">
-
                         <div class="skill-icon">
-
-                            <i class="bi bi-window-stack"></i>
-
+                            <i class="bi bi-microsoft"></i>
                         </div>
 
                         <span>06</span>
-
                     </div>
 
-
-                    <h3>
-
-                        Productivity
-
-                    </h3>
-
+                    <h3> Office</h3>
 
                     <div class="skill-tags">
-
-                        <span>Microsoft Word</span>
-                        <span>Excel</span>
-                        <span>PowerPoint</span>
-
+                        <span>
+                            <i class="bi bi-microsoft"></i>
+                            Microsoft Office
+                        </span>
                     </div>
 
                 </div>
-
             </div>
 
 

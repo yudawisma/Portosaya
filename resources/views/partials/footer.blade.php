@@ -7,7 +7,7 @@
             <div class="footer-brand">
 
                 <a href="#home" class="footer-logo">
-                    YW<span>.</span>
+                    Yuda_Jingga<span>.</span>
                 </a>
 
                 <p>
@@ -44,7 +44,7 @@
                 </a>
 
                 <a
-                    href="mailto:yudha@email.com"
+                    href="mailto:yudadani05@gmail.com"
                     aria-label="Email"
                 >
                     <i class="bi bi-envelope"></i>

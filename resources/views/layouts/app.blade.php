@@ -19,6 +19,8 @@
         rel="stylesheet"
     >
 
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
     <!-- AOS -->
     <link
         rel="stylesheet"

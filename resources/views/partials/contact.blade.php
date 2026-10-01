@@ -22,14 +22,14 @@
 
                 <div class="contact-details">
 
-                    <a href="mailto:yudha@email.com" class="contact-detail">
+                    <a href="mailto:-" class="contact-detail">
                         <div class="contact-detail-icon">
                             <i class="bi bi-envelope"></i>
                         </div>
 
                         <div>
                             <small>Email</small>
-                            <strong>yudha@email.com</strong>
+                            <strong>-</strong>
                         </div>
                     </a>
 

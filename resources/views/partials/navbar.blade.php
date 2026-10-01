@@ -2,7 +2,7 @@
     <div class="container">
 
         <a class="navbar-brand portfolio-brand" href="#home">
-            YW<span>.</span>
+            YJ<span>.</span>
         </a>
 
         <button

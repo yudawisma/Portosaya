@@ -11,6 +11,10 @@
 
     <link
         rel="stylesheet"
+        href="https://unpkg.com/lenis@1.3.26/dist/lenis.css">
+
+    <link
+        rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link
@@ -34,6 +38,7 @@
 </head>
 
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
     @include('partials.navbar')
 
     <main id="main-content">
@@ -41,6 +46,16 @@
     </main>
 
     @include('partials.footer')
+
+    {{-- GSAP --}}
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+
+    {{-- Lenis --}}
+    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+
+    {{-- Custom cinematic animation --}}
+    <script src="{{ asset('js/cinematic.js') }}"></script>
 
     @stack('scripts')
 </body>

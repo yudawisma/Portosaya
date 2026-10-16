@@ -1,332 +1,107 @@
-<section id="skills" class="skills-section">
-
+<section class="section skills-section" id="skills">
     <div class="container">
-
-        <div class="skills-header">
-
+        <div class="section-heading">
             <div>
-
-                <span class="section-label">
-
-                    <span class="section-number">02</span>
-
-                    TECHNICAL SKILLS
-
-                </span>
-
-
-                <h2 class="section-title">
-
-                    Tools & technologies
-                    I work with.
-
-                </h2>
-
+                <p class="eyebrow">05 / TECHNICAL EXPERTISE</p>
+                <h2>Tools for building<br><span>better systems.</span></h2>
             </div>
 
-
-            <p>
-
-                A collection of technologies and tools
-                I use to design, build and deploy
-                digital products.
-
+            <p class="section-intro">
+                Teknologi yang saya gunakan dalam pengembangan aplikasi,
+                integrasi sistem, dan eksperimen computer vision.
             </p>
-
         </div>
 
-
-
-        <div class="row g-4">
-
-
-            {{-- =====================================================
-                01 — PROGRAMMING
-            ====================================================== --}}
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="skill-card">
-
-                    <div class="skill-card-header">
-
-                        <div class="skill-icon">
-
-                            <i class="bi bi-code-slash"></i>
-
-                        </div>
-
-                        <span>01</span>
-
-                    </div>
-
-
-                    <h3>
-                        Programming
-                    </h3>
-
-
-                    <div class="skill-tags">
-
-                        <span>
-                            <iconify-icon icon="logos:html-5"></iconify-icon>
-                            HTML
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:css-3"></iconify-icon>
-                            CSS
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:javascript"></iconify-icon>
-                            JavaScript
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:php"></iconify-icon>
-                            PHP
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:dart"></iconify-icon>
-                            Dart
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:python"></iconify-icon>
-                            Python
-                        </span>
-
-                    </div>
-
+        <div class="skills-grid">
+            <!-- Software Development -->
+            <article class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-index">01</span>
+                    <span class="skill-icon">
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
+                    </span>
                 </div>
 
-            </div>
+                <h3>Software Development</h3>
+                <p>Application development and web interfaces.</p>
 
+                <div class="tech-list">
+                    <span class="tech-item"><i class="devicon-php-plain colored"></i> PHP</span>
+                    <span class="tech-item"><i class="devicon-laravel-original colored"></i> Laravel</span>
+                    <span class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                    <span class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                    <span class="tech-item"><i class="devicon-css3-plain colored"></i> CSS3</span>
+                    <span class="tech-item"><i class="devicon-react-original colored"></i> React</span>
+                    <span class="tech-item"><i class="devicon-nextjs-original"></i> Next.js</span>
+                    <span class="tech-item"><i class="devicon-vuejs-plain colored"></i> Vue.js</span>
+                    <span class="tech-item"><i class="devicon-flutter-plain colored"></i> Flutter</span>
+                </div>
+            </article>
 
-
-            {{-- =====================================================
-                02 — FRAMEWORK
-            ====================================================== --}}
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="skill-card">
-
-                    <div class="skill-card-header">
-
-                        <div class="skill-icon">
-
-                            <i class="bi bi-boxes"></i>
-
-                        </div>
-
-                        <span>02</span>
-
-                    </div>
-
-
-                    <h3>
-                        Framework
-                    </h3>
-
-
-                    <div class="skill-tags">
-
-                        <span>
-                            <iconify-icon icon="logos:laravel"></iconify-icon>
-                            Laravel
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:react"></iconify-icon>
-                            React
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:flutter"></iconify-icon>
-                            Flutter
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:vue"></iconify-icon>
-                            Vue
-                        </span>
-
-                    </div>
-
+            <!-- AI & Automation -->
+            <article class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-index">02</span>
+                    <span class="skill-icon">
+                        <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                    </span>
                 </div>
 
-            </div>
+                <h3>AI & Automation</h3>
+                <p>Workflow integration and AI-powered processes.</p>
 
-
-
-            {{-- 03 — AI & AUTOMATION --}}
-            <div class="col-md-6 col-lg-4">
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">
-                            <i class="bi bi-cpu"></i>
-                        </div>
-                        <span>03</span>
-                    </div>
-
-                    <h3>AI & Automation</h3>
-
-                    <div class="skill-tags">
-
-                        <span>
-                            <iconify-icon icon="mdi:robot-outline"></iconify-icon>
-                            AI Agent
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:n8n"></iconify-icon>
-                            n8n
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="simple-icons:openai"></iconify-icon>
-                            ChatGPT
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="simple-icons:googlegemini"></iconify-icon>
-                            Google Gemini
-                        </span>
-
-
-                    </div>
+                <div class="tech-list">
+                    <span class="tech-item"><i class="devicon-python-plain colored"></i> Python</span>
+                    <span class="tech-item"><i class="fa-solid fa-diagram-project"></i> n8n</span>
+                    <span class="tech-item"><i class="fa-solid fa-brain"></i> Gemini API</span>
+                    <span class="tech-item"><i class="fa-solid fa-diagram-project"></i> Webhook</span>
+                    <span class="tech-item"><i class="fa-solid fa-plug"></i> REST API</span>
+                    <span class="tech-item"><i class="fa-solid fa-network-wired"></i> Deep Learning</span>
                 </div>
-            </div>
+            </article>
 
-
-
-            {{-- =====================================================
-                04 — DATABASE
-            ====================================================== --}}
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="skill-card">
-
-                    <div class="skill-card-header">
-
-                        <div class="skill-icon">
-
-                            <i class="bi bi-database"></i>
-
-                        </div>
-
-                        <span>04</span>
-
-                    </div>
-
-
-                    <h3>
-                        Database
-                    </h3>
-
-
-                    <div class="skill-tags">
-
-                        <span>
-                            <iconify-icon icon="logos:mysql"></iconify-icon>
-                            MySQL
-                        </span>
-
-                    </div>
-
+            <!-- Computer Vision -->
+            <article class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-index">03</span>
+                    <span class="skill-icon">
+                        <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                    </span>
                 </div>
 
-            </div>
+                <h3>Computer Vision</h3>
+                <p>Image processing and real-time recognition.</p>
 
+                <div class="tech-list">
+                    <span class="tech-item"><i class="devicon-tensorflow-original colored"></i> TensorFlow</span>
+                    <span class="tech-item"><i class="devicon-keras-plain colored"></i> Keras</span>
+                    <span class="tech-item"><i class="devicon-opencv-plain colored"></i> OpenCV</span>
+                    <span class="tech-item"><i class="fa-solid fa-hand"></i> MediaPipe</span>
+                    <span class="tech-item"><i class="fa-solid fa-layer-group"></i> CNN</span>
+                </div>
+            </article>
 
-
-            {{-- =====================================================
-                05 — DEVELOPMENT TOOLS
-            ====================================================== --}}
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="skill-card">
-
-                    <div class="skill-card-header">
-
-                        <div class="skill-icon">
-
-                            <i class="bi bi-tools"></i>
-
-                        </div>
-
-                        <span>05</span>
-
-                    </div>
-
-
-                    <h3>
-                        Development Tools
-                    </h3>
-
-
-                    <div class="skill-tags">
-
-                        <span>
-                            <iconify-icon icon="logos:github-icon"></iconify-icon>
-                            GitHub
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:figma"></iconify-icon>
-                            Figma
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:postman"></iconify-icon>
-                            Postman
-                        </span>
-
-                        <span>
-                            <iconify-icon icon="logos:visual-studio-code"></iconify-icon>
-                            VS Code
-                        </span>
-
-                    </div>
-
+            <!-- Tools & Engineering -->
+            <article class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-index">04</span>
+                    <span class="skill-icon">
+                        <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                    </span>
                 </div>
 
-            </div>
+                <h3>Tools & Engineering</h3>
+                <p>Development workflow, testing, and data storage.</p>
 
-
-
-            {{-- 06 — MICROSOFT OFFICE --}}
-            <div class="col-md-6 col-lg-4">
-                <div class="skill-card">
-
-                    <div class="skill-card-header">
-                        <div class="skill-icon">
-                            <i class="bi bi-microsoft"></i>
-                        </div>
-
-                        <span>06</span>
-                    </div>
-
-                    <h3> Office</h3>
-
-                    <div class="skill-tags">
-                        <span>
-                            <i class="bi bi-microsoft"></i>
-                            Microsoft Office
-                        </span>
-                    </div>
-
+                <div class="tech-list">
+                    <span class="tech-item"><i class="devicon-mysql-original colored"></i> MySQL</span>
+                    <span class="tech-item"><i class="devicon-git-plain colored"></i> Git</span>
+                    <span class="tech-item"><i class="devicon-github-original"></i> GitHub</span>
+                    <span class="tech-item"><i class="devicon-postman-plain colored"></i> Postman</span>
+                    <span class="tech-item"><i class="devicon-figma-plain colored"></i> Figma</span>
+                    <span class="tech-item"><i class="devicon-linux-plain"></i> Linux</span>
                 </div>
-            </div>
-
-
+            </article>
         </div>
-
     </div>
-
 </section>

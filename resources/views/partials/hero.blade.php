@@ -1,176 +1,110 @@
-<section id="home" class="hero-section">
-
-    <div class="hero-grid"></div>
-
-    <div class="container position-relative">
-
-        <div class="row align-items-center min-vh-100 gy-5">
-
-            <!-- TEXT -->
-
-            <div class="col-lg-7 order-2 order-lg-1">
-
-                <div class="hero-content">
-
-                    <div class="hero-status">
-
-                        <span class="status-dot"></span>
-
-                        Available for opportunities
-
-                    </div>
-
-
-                    <p class="hero-intro">
-                        HELLO, I'M
-                    </p>
-
-
-                    <h1 class="hero-title">
-
-                        Yudha Wisma
-                        <span>Wardani S.Kom</span>
-
-                    </h1>
-
-
-                    <h2 class="hero-role">
-
-                        Web Developer
-
-                        <span>&</span>
-
-                        AI Agent Developer
-
-                    </h2>
-
-
-                    <p class="hero-description">
-
-                        I build modern web applications, mobile experiences,
-                        and AI-powered automation systems that transform ideas
-                        into useful digital solutions.
-
-                    </p>
-
-
-                    <div class="hero-buttons">
-
-                        <a href="#projects" class="btn-primary-custom">
-
-                            View My Work
-
-                            <i class="bi bi-arrow-down-right"></i>
-
-                        </a>
-
-
-                        <a href="#contact" class="btn-secondary-custom">
-
-                            Contact Me
-
-                        </a>
-
-                    </div>
-
-
-                    <div class="hero-social">
-
-                        <a
-                            href="https://github.com/yudawisma"
-                            target="_blank"
-                            aria-label="GitHub"
-                        >
-                            <i class="bi bi-github"></i>
-                        </a>
-
-
-                        <a
-                            href="https://linkedin.com/in/yudhawisma"
-                            target="_blank"
-                            aria-label="LinkedIn"
-                        >
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-
-
-                        <a
-                            href="mailto:yudadani05@gmail.com"
-                            aria-label="Email"
-                        >
-                            <i class="bi bi-envelope"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- IMAGE -->
-
-            <div class="col-lg-5 order-1 order-lg-2">
-
-                <div class="hero-image-container">
-
-                    <div class="hero-image-bg"></div>
-
-                    <div class="hero-image-wrapper">
-
-                        <img
-                            src="{{ asset('img/pas foto.JPG') }}"
-                            alt="Yudha Wisma Wardani"
-                            class="hero-image"
-                        >
-
-                    </div>
-
-
-                    <div class="floating-card floating-card-top">
-
-                        <i class="bi bi-code-slash"></i>
-
-                        <div>
-
-                            <small>Specialization</small>
-
-                            <strong>Web Development</strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="floating-card floating-card-bottom">
-
-                        <i class="bi bi-cpu"></i>
-
-                        <div>
-
-                            <small>Exploring</small>
-
-                            <strong>AI & Automation</strong>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+<section class="hero-section container" id="home">
+    <div class="hero-copy">
+        <p class="eyebrow">
+            <span class="status-dot"></span>
+            JUNIOR SOFTWARE ENGINEER · PORTFOLIO
+        </p>
+
+        <p class="hero-greeting">HELLO, I'M</p>
+
+        <h1 class="hero-title">
+            Yudha Wisma
+            <span>Wardani<span class="hero-period">.</span></span>
+        </h1>
+
+        <p class="hero-degree">
+            S.Kom. <span>/</span> Informatika
+        </p>
+
+        <p class="hero-description">
+            Software developer interested in building practical web
+            applications, AI-powered automation, and computer vision
+            solutions. Focused on solving problems through structured
+            thinking, continuous learning, and thoughtful engineering.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#projects" class="button button-primary">
+                Explore Projects <span>↗</span>
+            </a>
+
+            <a
+                href="{{ asset('documents/CV Yudha Wisma Wardani 2026.pdf') }}"
+                class="button button-secondary"
+                target="_blank"
+                rel="noopener noreferrer">
+                <span>View Resume</span> ↗
+            </a>
         </div>
 
+
+        <div class="hero-links">
+            <a href="https://github.com/yudawisma"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <span>GitHub</span>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"
+                    aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/yudhawisma"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                <span>LinkedIn</span>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"
+                    aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.instagram.com/yuda_jingga/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                <span>Instagram</span>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"
+                    aria-hidden="true"></i>
+            </a>
+
+            <a href="mailto:yudhawsma@gmail.com"
+                aria-label="Email">
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                <span>Email</span>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"
+                    aria-hidden="true"></i>
+            </a>
+        </div>
     </div>
 
+    <aside class="hero-aside">
+        <div class="hero-index">
+            <span>INFORMATIKA</span>
+            <span>01 / INTRODUCTION</span>
+        </div>
 
-    <a href="#about" class="scroll-indicator">
+        <div class="hero-visual">
+            <div class="visual-grid"></div>
 
-        <span>Scroll to explore</span>
+            <img
+                class="hero-profile"
+                src="{{ asset('img/pas foto.JPG') }}"
+                alt="Foto profil Yudha Wisma Wardani">
 
-        <i class="bi bi-arrow-down"></i>
+            <div class="hero-note">
+                <span class="note-number">01</span>
+                <div>
+                    <strong>Junior Software Engineer</strong>
+                    <p>Build · Learn · Improve</p>
+                </div>
+            </div>
+        </div>
 
-    </a>
-
+        <div class="hero-caption">
+            <span>BASED IN BREBES - JAWA TENGAH - INDONESIA</span>
+            <span>WEB / AI / VISION</span>
+        </div>
+    </aside>
 </section>

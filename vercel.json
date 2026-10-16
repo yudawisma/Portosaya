@@ -12,23 +12,19 @@
     }
   ],
   "routes": [
-    {
-      "src": "/(css|js|img|images|fonts|build)/(.*)",
-      "dest": "/public/$1/$2"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/public/favicon.ico"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
-    },
-    {
-  "src": "/(css|js|img|images|fonts|build|documents)/(.*)",
-  "dest": "/public/$1/$2"
-}
-  ],
+  {
+    "src": "/(css|js|img|images|fonts|build|documents|favicon.ico)/(.*)",
+    "dest": "/public/$1/$2"
+  },
+  {
+    "src": "/favicon.ico",
+    "dest": "/public/favicon.ico"
+  },
+  {
+    "src": "/(.*)",
+    "dest": "/api/index.php"
+  }
+],
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "true",

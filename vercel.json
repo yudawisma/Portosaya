@@ -23,7 +23,11 @@
     {
       "src": "/(.*)",
       "dest": "/api/index.php"
-    }
+    },
+    {
+  "src": "/(css|js|img|images|fonts|build|documents)/(.*)",
+  "dest": "/public/$1/$2"
+}
   ],
   "env": {
     "APP_ENV": "production",

@@ -373,6 +373,7 @@ h3 {
     gap: 12px;
     color: var(--muted);
     font-size: 9px;
+    
 }
 
 .hero-visual {
@@ -386,6 +387,7 @@ h3 {
     border: 1px solid #d7dfd7;
     border-radius: var(--radius);
     background: var(--surface-soft);
+    
 }
 
 .visual-grid {
@@ -1477,5 +1479,630 @@ html.lenis body {
     .project-card,
     .skill-card {
         will-change: auto;
+    }
+}
+
+
+
+/* poto */
+:root {
+    --nav-h: 75px; /* samakan dengan tinggi navbar */
+}
+
+.lanyard-3d {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    height: calc(100vh - var(--nav-h));
+    z-index: 1001;
+    overflow: hidden;
+    pointer-events: none;   /* klik tembus ke halaman */
+    will-change: opacity;
+}
+
+.lanyard-3d canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+/* =========================================
+   HERO SPACING — NAVBAR & INTRODUCTION
+   ========================================= */
+
+.hero-section {
+    padding-top: 32px;
+    box-sizing: border-box;
+}
+
+/* Jarak label introduction dari navbar */
+.hero-index {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    padding: 0 2px;
+
+    font-family: var(--font-mono, monospace);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    line-height: 1.6;
+    color: var(--muted, #667169);
+}
+
+/* Posisi konten hero tetap rapi */
+.hero-aside {
+    align-self: start;
+    min-width: 0;
+}
+
+/* Tampilan laptop kecil dan tablet */
+@media (max-width: 800px) {
+    .hero-section {
+        padding-top: 24px;
+    }
+
+    .hero-index {
+        margin-bottom: 14px;
+        font-size: 9px;
+    }
+}
+
+/* Tampilan HP */
+@media (max-width: 480px) {
+    .hero-section {
+        padding-top: 20px;
+    }
+
+    .hero-index {
+        gap: 8px;
+        font-size: 8px;
+        letter-spacing: 0.08em;
+    }
+}
+
+
+/* revisi */
+/* =========================================
+   HERO ALIGNMENT — EYEBROW/INDEX & CAPTION
+   ========================================= */
+
+/* Kedua kolom mulai dari garis atas yang sama,
+   dan kolom kiri setinggi kolom foto */
+.hero-section {
+    align-items: stretch;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+/* Baris atas: eyebrow (kiri) sejajar hero-index (kanan) */
+.hero-copy .eyebrow,
+.hero-aside .hero-index {
+    margin-top: 0;
+    margin-bottom: 18px;
+    padding: 0;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 0.09em;
+    min-height: 16px;
+    align-items: center;
+}
+
+/* Caption: di dasar kolom kiri, sejajar dasar foto */
+.hero-copy .hero-caption {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 9px;
+    line-height: 16px;
+    letter-spacing: 0.09em;
+    color: var(--muted);
+}
+
+/* Jarak aman antara link sosial dan caption */
+.hero-copy .hero-links {
+    margin-bottom: 36px;
+}
+
+/* Foto tidak menambah margin bawah yang membuat tinggi tidak seimbang */
+.hero-aside .hero-visual {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .hero-copy .hero-caption {
+        margin-top: 8px;
+    }
+
+    .hero-copy .hero-links {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-copy .hero-caption {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* modal */
+/* =========================================
+   PROJECT DETAIL MODAL
+   ========================================= */
+
+/* Kartu bisa diklik */
+.project-card[data-project-open] {
+    cursor: pointer;
+}
+
+.project-detail-btn {
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.project-detail-btn:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Badge video di kartu (kiri bawah gambar) */
+.art-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 9px;
+    border-radius: 5px;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+}
+
+.art-badge i {
+    font-size: 8px;
+}
+
+/* Link di baris "More work" */
+.footnote-link {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--accent);
+    font: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease;
+}
+
+.footnote-link:hover,
+.footnote-link:focus-visible {
+    text-decoration-color: currentColor;
+}
+
+/* Kunci scroll halaman saat modal terbuka */
+html.pm-open {
+    overflow: hidden;
+}
+
+/* ---------- Dialog ---------- */
+.pm {
+    width: min(980px, calc(100% - 32px));
+    max-height: calc(100dvh - 32px);
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 30px 80px rgba(32, 41, 35, 0.25);
+    overflow: hidden;
+}
+
+.pm[open] {
+    display: flex;
+    animation: pm-in 0.28s ease;
+}
+
+.pm::backdrop {
+    background: rgba(32, 41, 35, 0.55);
+    backdrop-filter: blur(4px);
+    animation: pm-fade 0.28s ease;
+}
+
+@keyframes pm-in {
+    from { opacity: 0; transform: translateY(14px) scale(0.985); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes pm-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.pm-shell {
+    display: flex;
+    width: 100%;
+    max-height: calc(100dvh - 32px);
+    flex-direction: column;
+}
+
+.pm-header {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 26px 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.pm-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.09em;
+}
+
+.pm-title {
+    margin: 0;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.pm-close {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pm-close:hover {
+    border-color: #c5d3c8;
+    background: var(--surface-soft);
+}
+
+.pm-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    gap: 26px;
+    padding: 24px 26px 28px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* ---------- Media ---------- */
+.pm-stage {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface-soft);
+}
+
+.pm-slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+
+.pm-slide[hidden] {
+    display: none;
+}
+
+.pm-slide > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.pm-slide-video > img {
+    object-fit: cover;
+}
+
+.pm-slide iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.pm-slide-video.is-playing > img,
+.pm-slide-video.is-playing > .pm-play {
+    display: none;
+}
+
+.pm-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    width: 68px;
+    height: 68px;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 10px 30px rgba(32, 41, 35, 0.35);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.pm-play i {
+    margin-left: 3px;
+}
+
+.pm-play:hover {
+    background: var(--accent-hover);
+    transform: translate(-50%, -50%) scale(1.07);
+}
+
+.pm-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.pm-thumb {
+    position: relative;
+    display: grid;
+    width: 76px;
+    height: 52px;
+    place-items: center;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    outline: 1px solid var(--line);
+    background: var(--surface-soft);
+    cursor: pointer;
+    opacity: 0.65;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.pm-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pm-thumb:hover,
+.pm-thumb.is-active {
+    opacity: 1;
+}
+
+.pm-thumb.is-active {
+    border-color: var(--accent);
+}
+
+.pm-thumb.is-video i {
+    position: absolute;
+    display: grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(32, 41, 35, 0.75);
+    color: #fff;
+    font-size: 8px;
+}
+
+/* ---------- Info ---------- */
+.pm-info h4 {
+    margin: 0 0 12px;
+    font-size: 19px;
+    line-height: 1.35;
+    letter-spacing: -0.035em;
+}
+
+.pm-info p {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.pm-tags {
+    margin-top: 0;
+}
+
+.pm-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+}
+
+.pm-actions .button {
+    gap: 9px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+    .pm-body {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 18px 18px 24px;
+    }
+
+    .pm-header {
+        padding: 18px 18px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pm {
+        width: calc(100% - 20px);
+        max-height: calc(100dvh - 20px);
+    }
+
+    .pm-shell {
+        max-height: calc(100dvh - 20px);
+    }
+
+    .pm-actions .button {
+        flex: 1 1 100%;
+    }
+}
+
+/* sertifikat */
+/* =========================================
+   CERTIFICATE LIGHTBOX
+   ========================================= */
+
+.cert-lb {
+    width: min(920px, calc(100% - 32px));
+    max-height: calc(100dvh - 32px);
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 30px 80px rgba(32, 41, 35, 0.25);
+    overflow: hidden;
+}
+
+.cert-lb[open] {
+    display: flex;
+    animation: pm-in 0.28s ease;
+}
+
+.cert-lb::backdrop {
+    background: rgba(32, 41, 35, 0.6);
+    backdrop-filter: blur(4px);
+    animation: pm-fade 0.28s ease;
+}
+
+.cert-lb-shell {
+    display: flex;
+    width: 100%;
+    min-height: 0;
+    flex-direction: column;
+}
+
+.cert-lb-header {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+.cert-lb-count {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.09em;
+}
+
+.cert-lb-title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+/* Gambar selalu muat di layar, tidak melebihi tinggi viewport */
+.cert-lb-stage {
+    display: grid;
+    min-height: 0;
+    flex: 1 1 auto;
+    place-items: center;
+    padding: 22px;
+    overflow: auto;
+    background: var(--surface-soft);
+}
+
+.cert-lb-stage img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: min(68dvh, 620px);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: var(--shadow);
+    object-fit: contain;
+}
+
+.cert-lb-footer {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 22px;
+    border-top: 1px solid var(--line);
+}
+
+.cert-lb-footer .button {
+    min-height: 40px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.cert-lb-hint {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+    .cert-lb {
+        width: calc(100% - 20px);
+        max-height: calc(100dvh - 20px);
+    }
+
+    .cert-lb-header,
+    .cert-lb-footer {
+        padding: 12px 14px;
+    }
+
+    .cert-lb-stage {
+        padding: 14px;
+    }
+
+    .cert-lb-stage img {
+        max-height: 60dvh;
+    }
+
+    /* petunjuk keyboard tidak relevan di HP */
+    .cert-lb-hint {
+        display: none;
     }
 }

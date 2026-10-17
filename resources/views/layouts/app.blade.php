@@ -8,6 +8,7 @@
     <meta name="description" content="Portofolio Yudha Wisma Wardani — Software Development, AI Automation, dan Computer Vision.">
 
     <title>@yield('title', 'Yudha Wisma Wardani — Software Engineer')</title>
+    <script src="{{ asset('js/projek.js') }}" defer></script>
 
     <link
         rel="stylesheet"
@@ -26,6 +27,9 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {{-- Three.js untuk lanyard 3D --}}
+    <script type="module" src="{{ asset('js/lanyard3d.js') }}"></script>
+    @stack('scripts')
     @stack('styles')
 
     <link
@@ -39,6 +43,11 @@
 
 <body>
     <div class="scroll-progress" aria-hidden="true"></div>
+     <div
+        class="lanyard-3d"
+        id="lanyard3d"
+        aria-label="Lanyard foto interaktif yang bisa ditarik">
+    </div>
     @include('partials.navbar')
 
     <main id="main-content">

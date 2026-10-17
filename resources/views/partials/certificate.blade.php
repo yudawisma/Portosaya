@@ -1,3 +1,25 @@
+@php
+    $certificates = [
+        ['image' => 'IBM1.jpg',      'title' => 'IBM Certificate'],
+        ['image' => 'IBM2.jpeg',     'title' => 'IBM Certificate'],
+        ['image' => 'IBM3.jpeg',     'title' => 'IBM Certificate'],
+        ['image' => 'Dicodiing.jpg', 'title' => 'Dicoding Certificate'],
+        ['image' => 'cp.jpg',        'title' => 'Certification'],
+        ['image' => 'coppa.jpg',     'title' => 'COPPA'],
+        ['image' => 'dc2.jpg',       'title' => 'Certification'],
+        ['image' => 'bi.jpg',        'title' => 'Certification'],
+        ['image' => 'intern.jpg',    'title' => 'Internship'],
+        ['image' => 'rh.jpg',        'title' => 'Certification'],
+        ['image' => 'gpa.jpg',       'title' => 'Achievement'],
+        ['image' => 'max.jpg',       'title' => 'Certification'],
+    ];
+
+    $certItems = collect($certificates)->map(fn ($c) => [
+        'src'   => asset('img/' . $c['image']),
+        'title' => $c['title'],
+    ])->values();
+@endphp
+
 <section id="certificate" class="premium-section certificate-section">
     <div class="container">
 
@@ -13,26 +35,8 @@
         </div>
 
         <div class="certificate-slider-wrapper">
-
             <div class="swiper certificateSwiper">
                 <div class="swiper-wrapper">
-
-                    @php
-                        $certificates = [
-                            ['image' => 'IBM1.jpg', 'title' => 'IBM Certificate'],
-                            ['image' => 'IBM2.jpeg', 'title' => 'IBM Certificate'],
-                            ['image' => 'IBM3.jpeg', 'title' => 'IBM Certificate'],
-                            ['image' => 'Dicodiing.jpg', 'title' => 'Dicoding Certificate'],
-                            ['image' => 'cp.jpg', 'title' => 'Certification'],
-                            ['image' => 'coppa.jpg', 'title' => 'COPPA'],
-                            ['image' => 'dc2.jpg', 'title' => 'Certification'],
-                            ['image' => 'bi.jpg', 'title' => 'Certification'],
-                            ['image' => 'intern.jpg', 'title' => 'Internship'],
-                            ['image' => 'rh.jpg', 'title' => 'Certification'],
-                            ['image' => 'gpa.jpg', 'title' => 'Achievement'],
-                            ['image' => 'max.jpg', 'title' => 'Certification'],
-                        ];
-                    @endphp
 
                     @foreach ($certificates as $certificate)
                         <div class="swiper-slide">
@@ -42,18 +46,13 @@
                                     <img
                                         src="{{ asset('img/' . $certificate['image']) }}"
                                         alt="{{ $certificate['title'] }}"
-                                        loading="lazy"
-                                    >
+                                        loading="lazy">
 
                                     <div class="certificate-overlay">
                                         <button
                                             type="button"
                                             class="certificate-view"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#certificateModal"
-                                            data-image="{{ asset('img/' . $certificate['image']) }}"
-                                            data-title="{{ $certificate['title'] }}"
-                                        >
+                                            data-cert-open="{{ $loop->index }}">
                                             <i class="bi bi-arrows-fullscreen"></i>
                                             View Certificate
                                         </button>
@@ -74,102 +73,152 @@
                 <div class="swiper-pagination"></div>
 
                 <div class="certificate-navigation">
-                    <button class="certificate-prev">
+                    <button type="button" class="certificate-prev" aria-label="Sebelumnya">
                         <i class="bi bi-arrow-left"></i>
                     </button>
-
-                    <button class="certificate-next">
+                    <button type="button" class="certificate-next" aria-label="Berikutnya">
                         <i class="bi bi-arrow-right"></i>
                     </button>
                 </div>
-
             </div>
-
         </div>
 
     </div>
 </section>
 
 
-{{-- Certificate Modal --}}
-<div class="modal fade certificate-modal" id="certificateModal" tabindex="-1">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
+{{-- Lightbox Sertifikat --}}
+<dialog class="cert-lb" id="certLightbox"
+        aria-label="Pratinjau sertifikat"
+        data-lenis-prevent
+        data-items="{{ json_encode($certItems) }}">
+    <div class="cert-lb-shell">
 
-            <button
-                type="button"
-                class="certificate-modal-close"
-                data-bs-dismiss="modal"
-            >
+        <header class="cert-lb-header">
+            <div>
+                <span class="cert-lb-count" id="certLbCount"></span>
+                <h3 class="cert-lb-title" id="certLbTitle"></h3>
+            </div>
+            <button type="button" class="pm-close" data-cert-close aria-label="Tutup">
                 <i class="bi bi-x-lg"></i>
             </button>
+        </header>
 
-            <div class="modal-body">
-                <img
-                    id="certificateModalImage"
-                    src=""
-                    alt="Certificate"
-                >
-            </div>
-
+        <div class="cert-lb-stage">
+            <img id="certLbImage" src="" alt="">
         </div>
+
+        <footer class="cert-lb-footer">
+            <button type="button" class="button button-secondary" data-cert-prev>
+                <i class="bi bi-arrow-left"></i> Sebelumnya
+            </button>
+            <span class="cert-lb-hint">Gunakan tombol ← → di keyboard</span>
+            <button type="button" class="button button-secondary" data-cert-next>
+                Berikutnya <i class="bi bi-arrow-right"></i>
+            </button>
+        </footer>
+
     </div>
-</div>
+</dialog>
 
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-    const certificateSwiper = new Swiper('.certificateSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 24,
-        loop: true,
-        grabCursor: true,
+    /* ---------- Swiper ---------- */
+    let certificateSwiper = null;
 
-        autoplay: {
-            delay: 3500,
-            disableOnInteraction: false,
-        },
+    if (typeof Swiper !== 'undefined') {
+        certificateSwiper = new Swiper('.certificateSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            grabCursor: true,
 
-        pagination: {
-            el: '.certificateSwiper .swiper-pagination',
-            clickable: true,
-        },
-
-        navigation: {
-            nextEl: '.certificate-next',
-            prevEl: '.certificate-prev',
-        },
-
-        breakpoints: {
-            576: {
-                slidesPerView: 2
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
             },
 
-            992: {
-                slidesPerView: 3
+            pagination: {
+                el: '.certificateSwiper .swiper-pagination',
+                clickable: true,
             },
 
-            1200: {
-                slidesPerView: 3
+            navigation: {
+                nextEl: '.certificate-next',
+                prevEl: '.certificate-prev',
+            },
+
+            breakpoints: {
+                576:  { slidesPerView: 2 },
+                992:  { slidesPerView: 3 },
+                1200: { slidesPerView: 3 }
             }
-        }
-    });
-
-
-    document.querySelectorAll('.certificate-view').forEach(button => {
-
-        button.addEventListener('click', function () {
-
-            const image = this.dataset.image;
-            const title = this.dataset.title;
-
-            document.getElementById('certificateModalImage').src = image;
-            document.getElementById('certificateModalImage').alt = title;
-
         });
+    }
 
+    /* ---------- Lightbox ---------- */
+    const lightbox = document.getElementById('certLightbox');
+    if (!lightbox) return;
+
+    const items = JSON.parse(lightbox.dataset.items || '[]');
+    const image = document.getElementById('certLbImage');
+    const title = document.getElementById('certLbTitle');
+    const count = document.getElementById('certLbCount');
+    const root  = document.documentElement;
+
+    let current = 0;
+
+    function show(index) {
+        if (!items.length) return;
+
+        current = (index + items.length) % items.length; // berputar
+        const item = items[current];
+
+        image.src = item.src;
+        image.alt = item.title;
+        title.textContent = item.title;
+        count.textContent =
+            String(current + 1).padStart(2, '0') + ' / ' +
+            String(items.length).padStart(2, '0');
+    }
+
+    function open(index) {
+        if (typeof lightbox.showModal !== 'function') return;
+
+        show(index);
+        lightbox.showModal();
+        root.classList.add('pm-open');
+        certificateSwiper?.autoplay?.stop();
+    }
+
+    document.addEventListener('click', function (event) {
+        const opener = event.target.closest('[data-cert-open]');
+        if (opener) {
+            open(Number(opener.dataset.certOpen));
+            return;
+        }
+
+        if (!event.target.closest('#certLightbox')) return;
+
+        if (event.target.closest('[data-cert-close]')) lightbox.close();
+        else if (event.target.closest('[data-cert-prev]')) show(current - 1);
+        else if (event.target.closest('[data-cert-next]')) show(current + 1);
+        else if (event.target === lightbox) lightbox.close(); // klik area gelap
     });
 
+    lightbox.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowLeft')  show(current - 1);
+        if (event.key === 'ArrowRight') show(current + 1);
+    });
+
+    lightbox.addEventListener('close', function () {
+        image.src = '';
+        if (!document.querySelector('dialog[open]')) {
+            root.classList.remove('pm-open');
+        }
+        certificateSwiper?.autoplay?.start();
+    });
 });
 </script>

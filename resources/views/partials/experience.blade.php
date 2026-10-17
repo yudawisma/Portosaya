@@ -1,4 +1,4 @@
-```blade
+
 <section class="section container" id="experience">
     <div class="section-heading">
         <div>
@@ -339,4 +339,3 @@
         </div>
     </div>
 </section>
-```

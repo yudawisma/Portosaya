@@ -33,50 +33,38 @@
                 class="button button-secondary"
                 target="_blank"
                 rel="noopener noreferrer">
-                <span>View Resume</span> ↗
+                View Resume ↗
             </a>
         </div>
-
 
         <div class="hero-links">
             <a href="https://github.com/yudawisma"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
                 <span>GitHub</span>
-                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"
-                    aria-hidden="true"></i>
             </a>
 
             <a href="https://www.linkedin.com/in/yudhawisma"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin-in"></i>
                 <span>LinkedIn</span>
-                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"
-                    aria-hidden="true"></i>
             </a>
 
             <a href="https://www.instagram.com/yuda_jingga/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram">
-                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
                 <span>Instagram</span>
-                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"
-                    aria-hidden="true"></i>
             </a>
 
-            <a href="mailto:yudhawsma@gmail.com"
-                aria-label="Email">
-                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:yudhawsma@gmail.com">
+                <i class="fa-regular fa-envelope"></i>
                 <span>Email</span>
-                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"
-                    aria-hidden="true"></i>
             </a>
         </div>
+         <div class="hero-caption">
+                        <span>BASED IN BREBES - JAWA TENGAH - INDONESIA</span>
+                        <span>WEB / AI / VISION</span>
+                    </div>
     </div>
 
     <aside class="hero-aside">
@@ -87,24 +75,20 @@
 
         <div class="hero-visual">
             <div class="visual-grid"></div>
-
             <img
                 class="hero-profile"
                 src="{{ asset('img/pas foto.JPG') }}"
                 alt="Foto profil Yudha Wisma Wardani">
-
             <div class="hero-note">
                 <span class="note-number">01</span>
                 <div>
                     <strong>Junior Software Engineer</strong>
                     <p>Build · Learn · Improve</p>
+                   
                 </div>
             </div>
         </div>
 
-        <div class="hero-caption">
-            <span>BASED IN BREBES - JAWA TENGAH - INDONESIA</span>
-            <span>WEB / AI / VISION</span>
-        </div>
+
     </aside>
 </section>

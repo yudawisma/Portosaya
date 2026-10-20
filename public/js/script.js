@@ -36,3 +36,7 @@ animateCursor();
       window.location.href = window.location.pathname + "?page=1";
     }
   }
+
+
+
+  

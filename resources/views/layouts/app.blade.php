@@ -9,6 +9,8 @@
 
     <title>@yield('title', 'Yudha Wisma Wardani — Software Engineer')</title>
     <script src="{{ asset('js/projek.js') }}" defer></script>
+    <script src="{{ asset('js/work.js') }}" defer></script>
+    <script src="{{ asset('js/hooks.js') }}" defer></script>
 
     <link
         rel="stylesheet"

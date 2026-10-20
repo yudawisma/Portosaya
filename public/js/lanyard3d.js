@@ -11,7 +11,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.m
 
     // ===== PENGATURAN =====
     const ANCHOR_X_RATIO = 0.88; // posisi gantung dari kiri layar (0 - 1)
-    const PX_PER_UNIT = 58;      // skala: makin besar, kartu makin besar
+    const PX_PER_UNIT = 70;      // skala: makin besar, kartu makin besar
     const MAX_STRETCH = 4;       // batas tali memanjang saat ditarik
 
     // ===== SCENE & CAMERA =====
@@ -32,7 +32,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.m
     keyLight.position.set(-3, 5, 10);
     scene.add(keyLight);
 
-    // ===== CARD =====
+    // CARD 
     const cardWidth = 2.15;
     const cardHeight = 3.05;
     const attachLen = cardHeight / 2 + 0.28;

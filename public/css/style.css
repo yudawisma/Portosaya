@@ -218,6 +218,83 @@ h3 {
     display: none;
 }
 
+.site-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(36, 73, 54, 0.96); /* var(--accent-hover) */
+    backdrop-filter: blur(16px);
+}
+
+.brand,
+.brand span {
+    color: #fff;
+}
+
+.nav-menu a {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.is-active {
+    color: #fff;
+}
+
+/* Garis bawah menu aktif */
+.nav-menu a:not(.nav-contact) {
+    position: relative;
+    padding-block: 6px;
+}
+
+.nav-menu a:not(.nav-contact)::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.nav-menu a.is-active::after,
+.nav-menu a:not(.nav-contact):hover::after {
+    transform: scaleX(1);
+}
+
+/* CTA dibalik: putih di atas hijau */
+.nav-menu .nav-contact {
+    border-color: #fff;
+    background: #fff;
+    color: var(--accent-hover);
+}
+
+.nav-menu .nav-contact:hover {
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+}
+
+/* Tombol hamburger di HP */
+.nav-toggle {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: transparent;
+}
+
+.nav-toggle span {
+    background: #fff;
+}
+
+@media (max-width: 600px) {
+    .nav-menu {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--accent-hover);
+    }
+}
+
+
+
 /* =========================================================
    HERO
    ========================================================= */
@@ -459,184 +536,6 @@ h3 {
     margin-bottom: 4px;
 }
 
-/* =========================================================
-   PROJECTS — BENTO GRID
-   ========================================================= */
-
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-flow: dense;
-    gap: 18px;
-}
-
-.project-card {
-    display: flex;
-    min-width: 0;
-    flex-direction: column;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--surface);
-    transition:
-        transform 220ms ease,
-        box-shadow 220ms ease,
-        border-color 220ms ease;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-    border-color: #c2d0c4;
-    box-shadow: var(--shadow);
-}
-
-.project-featured {
-    grid-row: span 2;
-}
-
-.project-topline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 20px 22px 14px;
-}
-
-.project-category,
-.project-number {
-    color: var(--muted);
-    font-size: 9px;
-}
-
-.project-art {
-    position: relative;
-    display: grid;
-    min-height: 190px;
-    overflow: hidden;
-    place-items: center;
-    margin-inline: 14px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: #edf1ed;
-}
-
-.project-featured .project-art {
-    min-height: 290px;
-}
-
-.project-art img {
-    width: 100%;
-    height: 100%;
-    max-height: 340px;
-    object-fit: cover;
-    transition: transform 350ms ease;
-}
-
-.project-card:hover .project-art img {
-    transform: scale(1.025);
-}
-
-.art-label {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    padding: 7px 9px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.88);
-    color: var(--text);
-    font-family: var(--font-mono);
-    font-size: 9px;
-}
-
-.project-body {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 23px;
-}
-
-.project-body h3 {
-    margin-bottom: 12px;
-}
-
-.project-body p {
-    margin-bottom: 18px;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.85;
-}
-
-.project-featured .project-body p {
-    max-width: 540px;
-}
-
-.project-title-row {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.project-title-row h3 {
-    margin-bottom: 12px;
-}
-
-.project-arrow {
-    color: var(--accent);
-    font-size: 20px;
-}
-
-.tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-top: auto;
-}
-
-.tag-list span {
-    padding: 6px 9px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background: #fbfcfb;
-    color: #4f5e53;
-    font-family: var(--font-mono);
-    font-size: 9px;
-}
-
-.text-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.project-metric {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin: 0 0 18px;
-}
-
-.project-metric strong {
-    color: var(--accent);
-    font-size: 27px;
-    letter-spacing: -0.06em;
-}
-
-.project-metric span {
-    color: var(--muted);
-    font-size: 10px;
-}
-
-.projects-footnote {
-    margin: 22px 0 0;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 10px;
-}
 
 /* =========================================================
    SKILLS & TECHNOLOGY LOGOS
@@ -1382,6 +1281,21 @@ h3 {
 /* =========================================
    CINEMATIC MOTION — SWISS EDITORIAL
 ========================================= */
+@media (max-width: 600px) {
+    .nav-menu {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--accent-hover);
+    }
+
+    .nav-toggle {
+        border-color: rgba(255, 255, 255, 0.25);
+        background: transparent;
+    }
+
+    .nav-toggle span {
+        background: #fff;
+    }
+}
 
 .scroll-progress {
     position: fixed;
@@ -1389,7 +1303,8 @@ h3 {
     z-index: 9999;
     width: 100%;
     height: 3px;
-    background: var(--accent, #315e48);
+    background: linear-gradient(90deg, #7fd1a0, #d8f5e3);
+    box-shadow: 0 0 10px rgba(127, 209, 160, 0.55);
     transform: scaleX(0);
     transform-origin: left center;
     pointer-events: none;
@@ -2105,4 +2020,650 @@ html.pm-open {
     .cert-lb-hint {
         display: none;
     }
+} 
+
+/* PROJEK */
+/* =========================================================
+   PROJECTS GRID — kartu seragam, screenshot bergaya jendela browser
+   Tempel di PALING BAWAH style.css (setelah blok "PROJEK").
+   Cocok dengan class pc-* di project.blade.php terbaru.
+   ========================================================= */
+
+:root {
+    /* variabel yang dipakai blok compact tapi belum pernah didefinisikan */
+    --ink: #17231c;
+    --line-strong: #c3d0c6;
 }
+
+/* ---------- Grid: 3 / 2 / 1 kolom ---------- */
+.pc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: row;
+    gap: 20px;
+}
+
+@media (max-width: 1000px) {
+    .pc-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .pc-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+}
+
+/* ---------- Kartu ---------- */
+.pc-grid .pc-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: 0 1px 2px rgba(23, 35, 28, 0.04);
+    cursor: pointer;
+    will-change: auto;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pc-grid .pc-card[hidden] {
+    display: none;
+}
+
+.pc-grid .pc-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 22px 44px -22px rgba(23, 35, 28, 0.35);
+}
+
+/* ---------- Screenshot dalam bingkai browser ---------- */
+.pc-grid .pc-shot {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+    margin: 10px 10px 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--surface-soft);
+}
+
+.pc-chrome {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 2;
+    display: flex;
+    height: 28px;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+    border-bottom: 1px solid var(--line);
+    background: #f4f7f4;
+}
+
+.pc-chrome i {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: #d3dbd5;
+    transition: background 0.25s ease;
+}
+
+.pc-card:hover .pc-chrome i:nth-child(1) { background: #e8786b; }
+.pc-card:hover .pc-chrome i:nth-child(2) { background: #e8c25b; }
+.pc-card:hover .pc-chrome i:nth-child(3) { background: #62b87f; }
+
+.pc-chrome span {
+    margin-left: 8px;
+    overflow: hidden;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-chrome span::before {
+    content: "~/projects/";
+    opacity: 0.55;
+}
+
+.pc-grid .pc-shot > img {
+    position: absolute;
+    inset: 28px 0 0 0;
+    width: 100%;
+    height: calc(100% - 28px);
+    max-height: none;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+}
+
+.pc-card:hover .pc-shot > img {
+    transform: scale(1.04);
+}
+
+.pc-shot .art-badge {
+    top: 38px;
+    right: 10px;
+    bottom: auto;
+    left: auto;
+    z-index: 3;
+    border-radius: 6px;
+    background: var(--ink);
+    font-size: 9.5px;
+}
+
+/* ---------- Isi kartu ---------- */
+.pc-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 16px 18px 14px;
+}
+
+.pc-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.pc-cat {
+    overflow: hidden;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-status {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #f7f9f7;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+}
+
+.pc-status::before {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #aab6ad;
+    content: "";
+}
+
+.pc-status.is-live {
+    border-color: #b9d8c5;
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+}
+
+.pc-status.is-live::before {
+    background: #3fa468;
+    box-shadow: 0 0 0 3px rgba(63, 164, 104, 0.22);
+}
+
+.pc-body h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    letter-spacing: -0.04em;
+}
+
+.pc-body > p {
+    display: -webkit-box;
+    margin: 0 0 14px;
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.65;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+.pc-body .project-metric {
+    align-self: flex-start;
+    margin: 0 0 14px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 7px;
+    background: var(--accent-soft);
+}
+
+.pc-body .project-metric strong {
+    font-family: var(--font-mono);
+    font-size: 15px;
+}
+
+/* Tag: dorong ke bawah supaya tinggi kartu sejajar */
+.pc-body .tag-list {
+    margin-top: auto;
+    gap: 5px;
+}
+
+.pc-body .tag-list span {
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: #f7f9f7;
+    color: #4a5a4f;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+}
+
+/* ---------- Footer kartu ---------- */
+.pc-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+}
+
+.pc-links {
+    display: inline-flex;
+    gap: 6px;
+}
+
+.pc-links a {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    color: var(--muted);
+    font-size: 12px;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.pc-links a:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.pc-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pc-open i {
+    font-size: 9px;
+    transition: transform 0.2s ease;
+}
+
+.pc-card:hover .pc-open i {
+    transform: translateX(4px);
+}
+
+/* ---------- Baris "Karya lain" ---------- */
+.projects-footnote {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: var(--font-mono);
+    font-size: 11px;
+}
+
+.projects-footnote > span {
+    margin-right: 4px;
+    color: var(--muted);
+}
+
+.projects-footnote .footnote-link {
+    padding: 5px 11px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.projects-footnote .footnote-link:hover,
+.projects-footnote .footnote-link:focus-visible {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+}
+
+/* ---------- Modal: sedikit dirapikan ---------- */
+.pm-header {
+    background: #f6f8f6;
+}
+
+.pm-stage {
+    background: var(--surface-soft);
+}
+
+/* ---------- Hormati reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .pc-card,
+    .pc-card:hover,
+    .pc-shot > img,
+    .pc-card:hover .pc-shot > img {
+        transform: none;
+    }
+}
+
+/* pengalaman */
+/* =========================================================
+   EXPERIENCE & EDUCATION — CLEAN ENGINEERING LOOK
+   Tempel di PALING BAWAH style.css. Tidak perlu ubah HTML.
+   Konsep: rail vertikal (seperti commit history), satu skala
+   tipografi yang konsisten, detail dalam panel ringkas.
+   ========================================================= */
+
+/* ---------- Layout kolom ---------- */
+.timeline-grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+    gap: 20px;
+}
+
+.timeline-grid .timeline-column {
+    padding: 32px 32px 36px;
+    border-radius: var(--radius);
+    box-shadow: none;
+}
+
+.timeline-grid .timeline-heading {
+    margin: 0 0 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+    letter-spacing: -0.03em;
+}
+
+.timeline-grid .timeline-subheading {
+    margin-top: 48px;
+}
+
+/* ---------- Rail + item ---------- */
+.timeline-grid .timeline-item {
+    position: relative;
+    margin-left: 4px;
+    padding: 0 0 36px 26px;
+    border-bottom: 0;
+    border-left: 1px solid var(--line);
+}
+
+.timeline-grid .timeline-item:last-child {
+    padding-bottom: 0;
+    border-left-color: transparent;
+}
+
+/* Titik node di rail */
+.timeline-grid .timeline-item::before {
+    top: 4px;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: var(--surface);
+    box-sizing: border-box;
+}
+
+/* Item paling aktif (pertama di kolom Work) diisi penuh */
+.timeline-grid .timeline-column:first-child .timeline-item:first-of-type::before {
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* ---------- Tanggal, judul, deskripsi ---------- */
+.timeline-grid .timeline-date {
+    display: inline-block;
+    margin: 0 0 10px;
+    padding: 2px 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #f7f9f7;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.timeline-grid .timeline-item h4 {
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+}
+
+.timeline-grid .timeline-item p {
+    max-width: 64ch;
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.timeline-grid .timeline-description {
+    margin-top: 0;
+}
+
+/* ---------- Detail dalam satu panel ringkas ---------- */
+.timeline-grid .experience-details {
+    display: block;
+    margin: 16px 0 0;
+    padding: 4px 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #f9fbf9;
+}
+
+.timeline-grid .experience-detail {
+    padding: 14px 0;
+    border-left: 0;
+}
+
+.timeline-grid .experience-detail + .experience-detail {
+    border-top: 1px solid var(--line);
+}
+
+.timeline-grid .experience-detail h5 {
+    margin: 0 0 4px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+}
+
+.timeline-grid .experience-detail p {
+    max-width: none;
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+/* ---------- Tag ---------- */
+.timeline-grid .timeline-item .tag-list {
+    gap: 6px;
+    margin-top: 16px;
+}
+
+.timeline-grid .timeline-item .tag-list span {
+    padding: 3px 9px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+    color: #4a5a4f;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    line-height: 1.5;
+}
+
+/* ---------- Sertifikasi: lebih ringkas ---------- */
+.timeline-grid .timeline-subheading ~ .timeline-item {
+    padding-bottom: 28px;
+}
+
+.timeline-grid .timeline-subheading ~ .timeline-item h4 {
+    font-size: 14.5px;
+}
+
+.timeline-grid .timeline-subheading ~ .timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .timeline-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .timeline-grid .timeline-column {
+        padding: 22px 18px 26px;
+    }
+
+    .timeline-grid .timeline-item {
+        padding-left: 20px;
+    }
+
+    .timeline-grid .experience-details {
+        padding: 2px 12px;
+    }
+
+    .timeline-grid .timeline-item h4 {
+        font-size: 15px;
+    }
+}
+
+/* =========================================================
+   WORK & PROJECTS — COLLAPSIBLE DETAILS
+   Tempel di PALING BAWAH style.css (setelah experience-clean.css).
+   Hanya memengaruhi kolom Work; kolom Education tidak berubah.
+   ========================================================= */
+
+.timeline-grid .timeline-column:first-child .timeline-item {
+    padding-bottom: 28px;
+}
+
+.timeline-grid .timeline-column:first-child .timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Tombol toggle */
+.timeline-more {
+    margin-top: 4px;
+}
+
+.timeline-more > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.timeline-more > summary::-webkit-details-marker {
+    display: none;
+}
+
+.timeline-more > summary:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+.timeline-more > summary:focus-visible {
+    outline: 3px solid #86a993;
+    outline-offset: 3px;
+}
+
+.timeline-more > summary em {
+    min-width: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+    font-size: 10px;
+    font-style: normal;
+    line-height: 18px;
+    text-align: center;
+}
+
+/* Chevron */
+.timeline-more > summary::after {
+    width: 6px;
+    height: 6px;
+    margin-left: 2px;
+    border-right: 1.5px solid var(--muted);
+    border-bottom: 1.5px solid var(--muted);
+    content: "";
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.timeline-more[open] > summary::after {
+    transform: translateY(1px) rotate(-135deg);
+}
+
+/* Isi saat dibuka */
+.timeline-more[open] > .experience-details {
+    margin-top: 14px;
+}
+
+.timeline-more[open] > .tag-list {
+    margin-top: 14px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .timeline-more[open] > .experience-details,
+    .timeline-more[open] > .tag-list {
+        animation: tm-in 0.22s ease;
+    }
+}
+
+@keyframes tm-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: none; }
+}
+

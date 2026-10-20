@@ -57,6 +57,15 @@
                     <span class="tech-item"><i class="fa-solid fa-diagram-project"></i> Webhook</span>
                     <span class="tech-item"><i class="fa-solid fa-plug"></i> REST API</span>
                     <span class="tech-item"><i class="fa-solid fa-network-wired"></i> Deep Learning</span>
+                    <span class="tech-item">
+                        <i class="devicon-google-plain"></i> Gemini
+                    </span>
+                    <span class="tech-item">
+                        <i class="fa-solid fa-robot"></i> ChatGPT
+                    </span>
+                    <span class="tech-item">
+                        <i class="fa-solid fa-brain"></i> Claude
+                    </span>
                 </div>
             </article>
 
@@ -99,6 +108,9 @@
                     <span class="tech-item"><i class="devicon-github-original"></i> GitHub</span>
                     <span class="tech-item"><i class="devicon-postman-plain colored"></i> Postman</span>
                     <span class="tech-item"><i class="devicon-figma-plain colored"></i> Figma</span>
+                    <span class="tech-item">
+                        <i class="fa-solid fa-pen-ruler"></i> Stitch AI
+                    </span>
                     <span class="tech-item"><i class="devicon-linux-plain"></i> Linux</span>
                 </div>
             </article>

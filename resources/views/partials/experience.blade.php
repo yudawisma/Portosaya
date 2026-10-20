@@ -1,4 +1,3 @@
-
 <section class="section container" id="experience">
     <div class="section-heading">
         <div>
@@ -215,6 +214,46 @@
                     <span>Web Development</span>
                     <span>Responsive UI</span>
                     <span>REST API</span>
+                    <span>Teamwork</span>
+                </div>
+            </article>
+
+            <!-- COPPA23 -->
+            <article class="timeline-item">
+                <span class="timeline-date">2023 · COPPA23</span>
+
+                <h4>SPONSORSHIP & HUMAS</h4>
+
+                <p class="timeline-description">
+                    Berpartisipasi dalam divisi Sponsorship dan Hubungan Masyarakat
+                    (Humas) pada kegiatan olahraga Universitas Amikom Purwokerto.
+                    Berkontribusi dalam mendukung kebutuhan acara serta koordinasi
+                    dan komunikasi dengan pihak terkait.
+                </p>
+
+                <div class="experience-details">
+                    <div class="experience-detail">
+                        <h5>Sponsorship</h5>
+                        <p>
+                            Mendukung kebutuhan sponsorship untuk membantu
+                            kelancaran penyelenggaraan kegiatan olahraga COPPA23.
+                        </p>
+                    </div>
+
+                    <div class="experience-detail">
+                        <h5>Humas</h5>
+                        <p>
+                            Berkontribusi dalam komunikasi dan koordinasi tim
+                            guna mendukung pelaksanaan acara.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tag-list">
+                    <span>Organizational Experience</span>
+                    <span>Sponsorship</span>
+                    <span>Public Relations</span>
+                    <span>Communication</span>
                     <span>Teamwork</span>
                 </div>
             </article>

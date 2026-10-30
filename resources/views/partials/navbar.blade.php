@@ -16,12 +16,13 @@
         </button>
 
         <div class="nav-menu" id="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact" class="nav-contact">Contact ↗</a>
-        </div>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#certificate">Certificates</a>
+    <a href="#contact" class="nav-contact">Contact ↗</a>
+</div>
     </nav>
 </header>

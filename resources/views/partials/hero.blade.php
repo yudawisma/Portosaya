@@ -2,7 +2,7 @@
     <div class="hero-copy">
         <p class="eyebrow">
             <span class="status-dot"></span>
-            JUNIOR SOFTWARE ENGINEER · PORTFOLIO
+             JUNIOR SOFTWARE ENGINEER · PORTFOLIO
         </p>
 
         <p class="hero-greeting">HELLO, I'M</p>
@@ -82,7 +82,7 @@
             <div class="hero-note">
                 <span class="note-number">01</span>
                 <div>
-                    <strong>Junior Software Engineer</strong>
+                    <strong> Junior Software Engineer</strong>
                     <p>Build · Learn · Improve</p>
                    
                 </div>

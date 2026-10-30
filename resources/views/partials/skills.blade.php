@@ -35,6 +35,7 @@
                     <span class="tech-item"><i class="devicon-nextjs-original"></i> Next.js</span>
                     <span class="tech-item"><i class="devicon-vuejs-plain colored"></i> Vue.js</span>
                     <span class="tech-item"><i class="devicon-flutter-plain colored"></i> Flutter</span>
+                    <span class="tech-item"><i class="devicon-python-plain colored"></i> Python</span>
                 </div>
             </article>
 
@@ -51,7 +52,6 @@
                 <p>Workflow integration and AI-powered processes.</p>
 
                 <div class="tech-list">
-                    <span class="tech-item"><i class="devicon-python-plain colored"></i> Python</span>
                     <span class="tech-item"><i class="fa-solid fa-diagram-project"></i> n8n</span>
                     <span class="tech-item"><i class="fa-solid fa-brain"></i> Gemini API</span>
                     <span class="tech-item"><i class="fa-solid fa-diagram-project"></i> Webhook</span>
@@ -99,11 +99,15 @@
                     </span>
                 </div>
 
-                <h3>Tools & Engineering</h3>
+                <h3>Database & Development Tools</h3>
                 <p>Development workflow, testing, and data storage.</p>
 
                 <div class="tech-list">
                     <span class="tech-item"><i class="devicon-mysql-original colored"></i> MySQL</span>
+                    <span class="tech-item">
+                        <i class="fa-solid fa-database"></i> DBeaver</span>
+                    <span class="tech-item">
+                        <i class="devicon-vscode-plain colored"></i> VS Code</span>
                     <span class="tech-item"><i class="devicon-git-plain colored"></i> Git</span>
                     <span class="tech-item"><i class="devicon-github-original"></i> GitHub</span>
                     <span class="tech-item"><i class="devicon-postman-plain colored"></i> Postman</span>

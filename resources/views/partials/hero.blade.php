@@ -2,7 +2,7 @@
     <div class="hero-copy">
         <p class="eyebrow">
             <span class="status-dot"></span>
-             JUNIOR SOFTWARE ENGINEER · PORTFOLIO
+             SOFTWARE DEVELOPER · PORTFOLIO
         </p>
 
         <p class="hero-greeting">HELLO, I'M</p>
@@ -29,7 +29,7 @@
             </a>
 
             <a
-                href="{{ asset('documents/CV Yudha Wisma Wardani 2026.pdf') }}"
+                href="{{ asset('documents/YUDHA WISMA WARDANI RESUME.pdf') }}"
                 class="button button-secondary"
                 target="_blank"
                 rel="noopener noreferrer">
@@ -63,7 +63,6 @@
         </div>
          <div class="hero-caption">
                         <span>BASED IN BREBES - JAWA TENGAH - INDONESIA</span>
-                        <span>WEB / AI / VISION</span>
                     </div>
     </div>
 
@@ -82,7 +81,7 @@
             <div class="hero-note">
                 <span class="note-number">01</span>
                 <div>
-                    <strong> Junior Software Engineer</strong>
+                    <strong> Software Developer</strong>
                     <p>Build · Learn · Improve</p>
                    
                 </div>

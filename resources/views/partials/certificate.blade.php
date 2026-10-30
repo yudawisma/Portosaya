@@ -12,6 +12,8 @@
         ['image' => 'rh.jpg',        'title' => 'Certification'],
         ['image' => 'gpa.jpg',       'title' => 'Achievement'],
         ['image' => 'max.jpg',       'title' => 'Certification'],
+        ['image' => 'msoffice1.jpg', 'title' => 'Microsoft Office Certificate'],
+        ['image' => 'msoffice2.jpg', 'title' => 'Microsoft Office Score'],
     ];
 
     $certItems = collect($certificates)->map(fn ($c) => [

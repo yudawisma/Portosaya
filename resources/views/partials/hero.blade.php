@@ -6,8 +6,8 @@
         alt="Foto Yudha Wisma Wardani"
         fetchpriority="high" decoding="async">
 
-        <div class="hero-fx__photo-blurmask" aria-hidden="true"></div>
-        
+    <div class="hero-fx__photo-blurmask" aria-hidden="true"></div>
+
     <!-- lanyard -->
     <!-- <div id="lanyard3d" class="lanyard-3d"></div> -->
 
@@ -26,11 +26,7 @@
         {{-- BARIS ATAS --}}
         <div class="hero-fx__top">
             <div class="hero-fx__intro">
-                <p>
-                    Software developer building practical web applications,
-                    with <span>AI automation</span>
-                    as complementary skills.
-                </p>
+                Pengembang perangkat lunak dari analisis kebutuhan hingga implementasi, dengan memperhatikan perancangan sistem, kualitas kode, dan bagaimana solusi yang dibangun bekerja dalam penggunaan nyata.
 
                 <a href="#projects" class="hero-fx__cta">
                     Explore Projects <span aria-hidden="true">↗</span>

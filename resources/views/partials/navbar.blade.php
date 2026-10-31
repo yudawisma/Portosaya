@@ -1,13 +1,22 @@
+
 <header class="site-header">
-    <nav class="nav-shell container" aria-label="Navigasi utama">
-        <a href="#home" class="brand" aria-label="Yudha Wisma Wardani">YJ</a>
+    <nav class="nav-shell" aria-label="Navigasi utama">
+
+        <a href="#home" class="brand-link" aria-label="Kembali ke Home">
+            <img
+                class="brand"
+                src="{{ asset('img/Y.png') }}"
+                alt="Logo Yudha Wisma"
+            >
+        </a>
 
         <button
             class="nav-toggle"
             type="button"
             aria-label="Buka navigasi"
             aria-expanded="false"
-            aria-controls="nav-menu">
+            aria-controls="nav-menu"
+        >
             <span></span>
             <span></span>
         </button>
@@ -24,5 +33,6 @@
 
             <a href="#contact" class="nav-contact">Contact ↗</a>
         </div>
+
     </nav>
 </header>

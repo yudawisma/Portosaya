@@ -1,18 +1,47 @@
-
 /* =========================================================
-   PROJECT UX — filter, modal, galeri, keyboard
-   Pastikan file ini dimuat setelah projek.js.
+   PROJEK.JS — filter, modal, galeri, keyboard
+   Dimuat SETELAH cinematic.js (supaya ScrollTrigger sudah ada).
+
+   Perbaikan dari versi lama:
+   1. Klik backdrop memakai event.clientX (sebelumnya target.clientX = undefined)
+   2. Slide video YouTube tidak lagi "kosong" setelah pindah slide
+   3. Video berhenti saat modal ditutup (sebelumnya suara tetap jalan)
+   4. Filter memanggil refresh ScrollTrigger + memastikan kartu tidak tertahan opacity 0
+   5. Kartu bisa dibuka lewat keyboard (Enter / Space)
+   6. data-lenis-prevent + overscroll-behavior agar modal bisa di-scroll di HP
 ========================================================= */
 (() => {
     'use strict';
 
     const isTyping = (el) =>
         el &&
-        (
-            el.tagName === 'INPUT' ||
+        (el.tagName === 'INPUT' ||
             el.tagName === 'TEXTAREA' ||
-            el.isContentEditable
-        );
+            el.isContentEditable);
+
+    let refreshTimer = 0;
+    const refreshLayout = () => {
+        clearTimeout(refreshTimer);
+        refreshTimer = setTimeout(() => {
+            if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+            else window.dispatchEvent(new Event('resize'));
+        }, 60);
+    };
+
+    /* ---------- Video YouTube: simpan & pulihkan poster ---------- */
+    function resetSlide(slide) {
+        if (slide._poster) {
+            slide.replaceChildren(...slide._poster);
+            slide._poster = null;
+        } else {
+            const iframe = slide.querySelector('iframe');
+            if (iframe) iframe.remove();
+        }
+    }
+
+    function stopVideos(dialog) {
+        dialog.querySelectorAll('[data-youtube]').forEach(resetSlide);
+    }
 
     /* ---------- Filter proyek ---------- */
     const input = document.getElementById('project-filter');
@@ -26,6 +55,8 @@
         empty.className = 'project-empty';
         empty.hidden = true;
         grid.appendChild(empty);
+
+        let first = true;
 
         const apply = () => {
             const q = input.value.trim().toLowerCase();
@@ -42,6 +73,17 @@
             empty.hidden = shown !== 0;
             empty.textContent =
                 `Tidak ada proyek untuk "${input.value.trim()}". Coba: Laravel, React, AI.`;
+
+            // Kartu yang belum sempat di-reveal GSAP jangan tertahan opacity 0
+            if (!first && window.gsap) {
+                window.gsap.set(cards, {
+                    autoAlpha: 1, x: 0, y: 0, scale: 1, rotateX: 0,
+                    clearProps: 'transform,opacity,visibility,transition',
+                });
+            }
+            first = false;
+
+            refreshLayout();
         };
 
         input.addEventListener('input', apply);
@@ -57,7 +99,49 @@
         apply();
     }
 
-    /* ---------- Buka modal proyek ---------- */
+    /* ---------- Siapkan semua dialog ---------- */
+    document.querySelectorAll('dialog.pm').forEach((dialog) => {
+        // Lenis jangan mencuri scroll di dalam modal
+        dialog.setAttribute('data-lenis-prevent', '');
+
+        dialog.addEventListener('close', () => {
+            stopVideos(dialog);
+            document.body.classList.remove('project-modal-open');
+        });
+    });
+
+    /* ---------- Kartu proyek bisa difokus & dibuka via keyboard ---------- */
+    document.querySelectorAll('[data-project-open]').forEach((el) => {
+        const native = el.matches('a, button, summary, input');
+        if (native) return;
+
+        if (!el.hasAttribute('tabindex')) el.tabIndex = 0;
+        if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+
+        const el = e.target instanceof Element ? e.target : null;
+        if (!el || !el.matches('[data-project-open]')) return;
+        if (el.matches('a, button, summary, input')) return;
+
+        e.preventDefault();
+        el.click();
+    });
+
+    /* ---------- Buka / tutup modal ---------- */
+    function closeDialog(dialog) {
+        if (typeof dialog.close === 'function' && dialog.open) {
+            dialog.close();
+        } else {
+            dialog.removeAttribute('open');
+            stopVideos(dialog);
+        }
+
+        document.body.classList.remove('project-modal-open');
+    }
+
     document.addEventListener('click', (event) => {
         const target = event.target;
 
@@ -99,36 +183,20 @@
         }
 
         // Klik area backdrop dialog native.
+        // Catatan: koordinat harus dari `event`, bukan dari `target`.
         const dialog = target.closest('dialog.pm');
 
         if (dialog && target === dialog) {
             const rect = dialog.getBoundingClientRect();
 
             const inside =
-                target.clientX >= rect.left &&
-                target.clientX <= rect.right &&
-                target.clientY >= rect.top &&
-                target.clientY <= rect.bottom;
+                event.clientX >= rect.left &&
+                event.clientX <= rect.right &&
+                event.clientY >= rect.top &&
+                event.clientY <= rect.bottom;
 
             if (!inside) closeDialog(dialog);
         }
-    });
-
-    function closeDialog(dialog) {
-        if (typeof dialog.close === 'function' && dialog.open) {
-            dialog.close();
-        } else {
-            dialog.removeAttribute('open');
-        }
-
-        document.body.classList.remove('project-modal-open');
-    }
-
-    // Bersihkan status scroll saat dialog ditutup dengan Escape.
-    document.querySelectorAll('dialog.pm').forEach((dialog) => {
-        dialog.addEventListener('close', () => {
-            document.body.classList.remove('project-modal-open');
-        });
     });
 
     /* ---------- Navigasi thumbnail galeri ---------- */
@@ -151,11 +219,13 @@
 
         dialog.querySelectorAll('[data-slide]').forEach((slide) => {
             slide.hidden = slide.dataset.slide !== index;
-
-            // Hentikan video ketika berpindah slide.
-            const iframe = slide.querySelector('iframe');
-            if (iframe) iframe.remove();
+            // Hentikan video & kembalikan poster + tombol play
+            resetSlide(slide);
+            slide.querySelectorAll('[data-youtube]').forEach(resetSlide);
         });
+
+        // Pada HP, bawa thumbnail aktif ke tengah baris
+        thumb.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
     });
 
     /* ---------- Putar video YouTube di dalam modal ---------- */
@@ -190,6 +260,8 @@
         iframe.style.aspectRatio = '16 / 9';
         iframe.style.border = '0';
 
+        // Simpan isi asli (poster + tombol play) supaya bisa dipulihkan
+        slide._poster = Array.from(slide.childNodes);
         slide.replaceChildren(iframe);
     });
 
@@ -197,10 +269,8 @@
     document.addEventListener('keydown', (e) => {
         const dialog = document.querySelector('dialog.pm[open]');
 
-        if (e.key === 'Escape' && dialog) {
-            // Browser biasanya menutup dialog native dengan Escape.
-            return;
-        }
+        // Escape ditangani browser untuk dialog native.
+        if (e.key === 'Escape' && dialog) return;
 
         if (e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey) {
             if (isTyping(document.activeElement)) return;

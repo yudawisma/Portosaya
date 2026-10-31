@@ -11,6 +11,8 @@
     <script src="{{ asset('js/projek.js') }}" defer></script>
     <script src="{{ asset('js/work.js') }}" defer></script>
     <script src="{{ asset('js/hooks.js') }}" defer></script>
+    <script src="{{ asset('js/carousel.js') }}" defer></script>
+
 
     <!-- FONT KHUSUS -->
      <link rel="preconnect" href="https://fonts.googleapis.com">

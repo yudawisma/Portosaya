@@ -12,6 +12,11 @@
     <script src="{{ asset('js/work.js') }}" defer></script>
     <script src="{{ asset('js/hooks.js') }}" defer></script>
 
+    <!-- FONT KHUSUS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+
     <link
         rel="stylesheet"
         href="https://unpkg.com/lenis@1.3.26/dist/lenis.css">

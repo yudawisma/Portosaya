@@ -1,93 +1,88 @@
-<section class="hero-section container" id="home">
-    <div class="hero-copy">
-        <p class="eyebrow">
-            <span class="status-dot"></span>
-             SOFTWARE DEVELOPER · PORTFOLIO
-        </p>
+<section class="hero-fx" id="home">
 
-        <p class="hero-greeting">HELLO, I'M</p>
+    {{-- Foto asli tajam --}}
+    <img class="hero-fx__photo-real"
+        src="{{ asset('img/pas foto ijasah.jpeg') }}"
+        alt="Foto Yudha Wisma Wardani"
+        fetchpriority="high" decoding="async">
 
-        <h1 class="hero-title">
-            Yudha Wisma
-            <span>Wardani<span class="hero-period">.</span></span>
-        </h1>
+        <div class="hero-fx__photo-blurmask" aria-hidden="true"></div>
+        
+    <!-- lanyard -->
+    <!-- <div id="lanyard3d" class="lanyard-3d"></div> -->
 
-        <p class="hero-degree">
-            S.Kom. <span>/</span> Informatika
-        </p>
+    {{-- Tanda + dekoratif --}}
+    <span class="hero-fx__plus p1" aria-hidden="true"></span>
 
-        <p class="hero-description">
-            Software developer interested in building practical web
-            applications, AI-powered automation, and computer vision
-            solutions. Focused on solving problems through structured
-            thinking, continuous learning, and thoughtful engineering.
-        </p>
 
-        <div class="hero-actions">
-            <a href="#projects" class="button button-primary">
-                Explore Projects <span>↗</span>
-            </a>
+    {{-- Tanda + dekoratif --}}
+    <span class="hero-fx__plus p1" aria-hidden="true"></span>
+    <span class="hero-fx__plus p2" aria-hidden="true"></span>
+    <span class="hero-fx__plus p3" aria-hidden="true"></span>
+    <span class="hero-fx__plus p4" aria-hidden="true"></span>
+
+    <div class="hero-fx__inner">
+
+        {{-- BARIS ATAS --}}
+        <div class="hero-fx__top">
+            <div class="hero-fx__intro">
+                <p>
+                    Software developer building practical web applications,
+                    with <span>AI automation</span>
+                    as complementary skills.
+                </p>
+
+                <a href="#projects" class="hero-fx__cta">
+                    Explore Projects <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+
+        </div>
+
+        {{-- DAFTAR FOKUS --}}
+        <div class="hero-fx__focus-area">
 
             <a
                 href="{{ asset('documents/YUDHA WISMA WARDANI RESUME.pdf') }}"
-                class="button button-secondary"
+                class="hero-fx__resume"
                 target="_blank"
                 rel="noopener noreferrer">
-                View Resume ↗
+                VIEW RESUME <span aria-hidden="true">↗</span>
             </a>
         </div>
 
-        <div class="hero-links">
-            <a href="https://github.com/yudawisma"
-                target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i>
-                <span>GitHub</span>
-            </a>
 
-            <a href="https://www.linkedin.com/in/yudhawisma"
-                target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin-in"></i>
-                <span>LinkedIn</span>
-            </a>
+        {{-- BARIS BAWAH --}}
+        <div class="hero-fx__bottom">
+            <h1 class="hero-fx__name">
+                <span class="hero-fx__first">Yudha</span>
+                <span class="hero-fx__last">Wisma<br>Wardani</span>
+            </h1>
 
-            <a href="https://www.instagram.com/yuda_jingga/"
-                target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
+            <div class="hero-fx__meta">
+                <div class="hero-fx__copy">
 
-            <a href="mailto:yudhawsma@gmail.com">
-                <i class="fa-regular fa-envelope"></i>
-                <span>Email</span>
-            </a>
-        </div>
-         <div class="hero-caption">
-                        <span>BASED IN BREBES - JAWA TENGAH - INDONESIA</span>
-                    </div>
-    </div>
+                    <i class="hero-fx__ruler" aria-hidden="true"></i>
+                    <span>SOFTWARE DEVELOPER</span>
+                </div>
 
-    <aside class="hero-aside">
-        <div class="hero-index">
-            <span>INFORMATIKA</span>
-            <span>01 / INTRODUCTION</span>
-        </div>
-
-        <div class="hero-visual">
-            <div class="visual-grid"></div>
-            <img
-                class="hero-profile"
-                src="{{ asset('img/pas foto.JPG') }}"
-                alt="Foto profil Yudha Wisma Wardani">
-            <div class="hero-note">
-                <span class="note-number">01</span>
-                <div>
-                    <strong> Software Developer</strong>
-                    <p>Build · Learn · Improve</p>
-                   
+                <div class="hero-fx__social">
+                    <a href="https://github.com/yudawisma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yudhawisma" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yuda_jingga/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="mailto:yudhawsma@gmail.com" aria-label="Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
                 </div>
             </div>
         </div>
 
-
-    </aside>
+    </div>
 </section>

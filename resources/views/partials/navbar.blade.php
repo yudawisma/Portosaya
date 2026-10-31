@@ -1,9 +1,6 @@
-
 <header class="site-header">
     <nav class="nav-shell container" aria-label="Navigasi utama">
-        <a href="#home" class="brand" aria-label="Yudha Wisma Wardani">
-            YJ
-        </a>
+        <a href="#home" class="brand" aria-label="Yudha Wisma Wardani">YJ</a>
 
         <button
             class="nav-toggle"
@@ -16,13 +13,16 @@
         </button>
 
         <div class="nav-menu" id="nav-menu">
-    <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#certificate">Certificates</a>
-    <a href="#contact" class="nav-contact">Contact ↗</a>
-</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#certificate">Certificates</a>
+            </div>
+
+            <a href="#contact" class="nav-contact">Contact ↗</a>
+        </div>
     </nav>
 </header>

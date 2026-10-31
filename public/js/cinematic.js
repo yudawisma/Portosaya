@@ -245,3 +245,161 @@
         });
     });
 })();
+
+
+// NAVBAR
+
+(function () {
+    if (!window.gsap) return;
+
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    const items = header.querySelectorAll('.brand, .nav-links a, .nav-contact');
+    const menu = document.getElementById('nav-menu');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let hidden = false;
+    let lastY = window.scrollY;
+    const threshold = 8;
+    const showAfter = 80;
+
+    /* ---------- Intro saat halaman dibuka ---------- */
+    if (!reduce) {
+        gsap.from(header, {
+            yPercent: -100,
+            duration: 1.1,
+            ease: 'expo.out',
+            delay: 0.2,
+        });
+
+        gsap.from(items, {
+            y: -18,
+            opacity: 0,
+            filter: 'blur(8px)',
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.07,
+            delay: 0.45,
+            clearProps: 'filter,opacity,transform',
+        });
+    }
+
+    /* ---------- Sembunyikan (scroll ke bawah) ---------- */
+    function hide() {
+        if (hidden) return;
+        hidden = true;
+        gsap.killTweensOf([header, items]);
+
+        if (reduce) {
+            gsap.set(header, { yPercent: -100 });
+            return;
+        }
+
+        gsap.to(items, {
+            y: -12,
+            opacity: 0,
+            filter: 'blur(6px)',
+            duration: 0.3,
+            ease: 'power2.in',
+            stagger: { each: 0.03, from: 'end' },
+        });
+
+        gsap.to(header, {
+            yPercent: -100,
+            duration: 0.7,
+            ease: 'expo.inOut',
+            delay: 0.08,
+        });
+    }
+
+    /* ---------- Tampilkan (scroll ke atas) ---------- */
+    function show() {
+        if (!hidden) return;
+        hidden = false;
+        gsap.killTweensOf([header, items]);
+
+        if (reduce) {
+            gsap.set(header, { yPercent: 0 });
+            gsap.set(items, { clearProps: 'all' });
+            return;
+        }
+
+        gsap.to(header, {
+            yPercent: 0,
+            duration: 0.8,
+            ease: 'expo.out',
+        });
+
+        gsap.fromTo(items,
+            { y: -16, opacity: 0, filter: 'blur(8px)' },
+            {
+                y: 0,
+                opacity: 1,
+                filter: 'blur(0px)',
+                duration: 0.7,
+                ease: 'power3.out',
+                stagger: 0.05,
+                delay: 0.12,
+                clearProps: 'filter,opacity,transform',
+            }
+        );
+    }
+
+    /* ---------- Deteksi arah scroll ---------- */
+    function onScroll(y) {
+        const menuOpen = menu && menu.classList.contains('is-open');
+
+        if (y < showAfter || menuOpen) {
+            show();
+        } else if (y > lastY + threshold) {
+            hide();
+        } else if (y < lastY - threshold) {
+            show();
+        }
+        lastY = y;
+    }
+
+    if (window.lenis && typeof window.lenis.on === 'function') {
+        window.lenis.on('scroll', ({ scroll }) => onScroll(scroll));
+    } else {
+        window.addEventListener('scroll', () => onScroll(window.scrollY), { passive: true });
+    }
+})();
+
+// Hero
+(function () {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero = document.querySelector('.hero-fx');
+    if (!hero) return;
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+
+    // Potongan miring membesar seiring scroll
+    gsap.to(hero, {
+        '--cut': '34%',
+        ease: 'none',
+        scrollTrigger: {
+            trigger: hero,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+        },
+    });
+
+    // Isi hero naik sedikit & memudar (parallax halus)
+    gsap.to('.hero-fx__inner', {
+        yPercent: -8,
+        opacity: 0.35,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: hero,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+        },
+    });
+})();

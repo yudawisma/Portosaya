@@ -7,19 +7,38 @@
     <meta name="theme-color" content="#F5F7F5">
     <meta name="description" content="Portofolio Yudha Wisma Wardani — Software Development, AI Automation, dan Computer Vision.">
 
+
+    <script>
+        (function() {
+            try {
+                var l = localStorage.getItem('site-lang');
+                if (!l) l = (navigator.language || 'id').toLowerCase().indexOf('id') === 0 ? 'id' : 'en';
+                document.documentElement.dataset.lang = l;
+                document.documentElement.lang = l;
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="{{ asset('js/lang-switcher.js') }}" defer></script>
     <title>@yield('title', 'Yudha Wisma Wardani — Software Engineer')</title>
     <script src="{{ asset('js/projek.js') }}" defer></script>
     <script src="{{ asset('js/work.js') }}" defer></script>
     <script src="{{ asset('js/hooks.js') }}" defer></script>
     <script src="{{ asset('js/carousel.js') }}" defer></script>
 
-   <noscript>
-    <style>
-        html.cine-pre .hero-fx,
-        html.cine-pre .site-header { visibility: visible !important; }
-        html.cine-pre, html.cine-pre body { background: #fffdf9 !important; }
-    </style>
-</noscript>
+    <noscript>
+        <style>
+            html.cine-pre .hero-fx,
+            html.cine-pre .site-header {
+                visibility: visible !important;
+            }
+
+            html.cine-pre,
+            html.cine-pre body {
+                background: #fffdf9 !important;
+            }
+        </style>
+    </noscript>
 
 
     <!-- FONT KHUSUS -->

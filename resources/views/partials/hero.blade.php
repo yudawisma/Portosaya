@@ -17,7 +17,7 @@
         {{-- BARIS ATAS --}}
         <div class="hero-fx__top">
             <div class="hero-fx__intro">
-                <p>
+                <p data-en="Software developer covering everything from requirements analysis to implementation, with attention to system design, code quality, and how the solutions I build perform in real-world use.">
                     Pengembang perangkat lunak dari analisis kebutuhan hingga implementasi, dengan memperhatikan perancangan sistem, kualitas kode, dan bagaimana solusi yang dibangun bekerja dalam penggunaan nyata.
                 </p>
 
@@ -29,7 +29,7 @@
 
         {{-- RESUME --}}
         <div class="hero-fx__focus-area">
-            <a href="{{ asset('documents/YUDHA WISMA WARDANI RESUME.pdf') }}"
+            <a href="#contact"
                 class="hero-fx__resume"
                 target="_blank" rel="noopener noreferrer">
                 VIEW RESUME <span aria-hidden="true">↗</span>

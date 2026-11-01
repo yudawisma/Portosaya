@@ -252,12 +252,6 @@ h3 {
 }
 
 
-/* =========================================================
-   03. NAVBAR
-   Transparan saat hero terlihat (kelas .is-over-hero dari
-   hero.js), gelap solid setelahnya.
-   ========================================================= */
-
 
 /* =========================================================
    NAVBAR
@@ -3579,4 +3573,170 @@ html, body {
 @media (max-width: 768px) {
     .cut-fx { clip-path: none; }
     .cut-fx + * { margin-top: 0; padding-top: 0; }
+}
+
+
+/* TRANSLATORRRR */
+/* =========================================================
+   LANG SWITCHER
+   ========================================================= */
+
+/* kanan navbar: tombol bahasa + Contact */
+.nav-right {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lang {
+    position: relative;
+}
+
+.lang__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 9px;
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.lang__btn:hover,
+.lang.is-open .lang__btn {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.lang__btn i {
+    font-size: 14px;
+}
+
+.lang__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 20;
+    min-width: 160px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: #17130f;
+    box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px) scale(0.98);
+    transform-origin: top right;
+    transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.lang.is-open .lang__menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+}
+
+.lang__opt {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 9px 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12.5px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang__opt:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.lang__code {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    opacity: 0.55;
+}
+
+.lang__opt[aria-checked="true"] {
+    color: #fff;
+}
+
+.lang__opt[aria-checked="true"] .lang__code {
+    color: #ff7a2e;
+    opacity: 1;
+}
+
+/* HP / tablet: menu hamburger berbentuk kolom */
+@media (max-width: 900px) {
+    .nav-right {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 8px;
+        margin-top: 6px;
+    }
+
+    .lang__btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .lang__menu {
+        position: static;
+        display: none;
+        margin-top: 6px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    .lang.is-open .lang__menu {
+        display: block;
+    }
+}
+
+/* ---------- Sembunyikan tampilan bawaan Google Translate ---------- */
+.gt-holder,
+#google_translate_element {
+    display: none !important;
+}
+
+body > .skiptranslate,
+.goog-te-banner-frame,
+iframe.skiptranslate,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+font {
+    background: none !important;
+    box-shadow: none !important;
 }

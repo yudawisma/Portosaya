@@ -45,11 +45,11 @@
 
     /* ---------- Filter proyek ---------- */
     const input = document.getElementById('project-filter');
-    const grid = document.querySelector('.bento-grid');
+    const grid = document.querySelector('.pc-grid');
     const count = document.getElementById('project-count');
 
     if (input && grid) {
-        const cards = [...grid.querySelectorAll('.project-card')];
+        const cards = [...grid.querySelectorAll('.pc-card')];
         const empty = document.createElement('p');
 
         empty.className = 'project-empty';

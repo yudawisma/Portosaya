@@ -101,6 +101,7 @@ $projects = [
         'tags' => ['Laravel', 'Bootstrap 5', 'Figma'],
         'tech' => ['Laravel', 'Bootstrap 5', 'Figma'],
         'gallery' => [],
+        'live'    => 'https://certificategenerate.my.id',
         // 'design' => 'https://www.figma.com/design/xxxx',
     ],
     [
@@ -112,8 +113,8 @@ $projects = [
         'cover' => 'img/wt.png',
         'summary' => 'UI responsif dan integrasi komponen frontend dengan RESTful API untuk platform agrowisata.',
         'description' => 'Platform digital yang menggabungkan informasi agrowisata, produk pertanian, dan kegiatan edukasi. Saya merancang UI responsif dan mengintegrasikan komponen frontend dengan RESTful API backend.',
-        'tags' => ['Laravel', 'REST API', 'Responsive UI'],
-        'tech' => ['Laravel', 'Frontend', 'REST API', 'Responsive UI'],
+        'tags' => ['NextJS', 'REST API', 'Responsive UI'],
+        'tech' => ['NextJS', 'Frontend', 'REST API', 'Responsive UI'],
         'gallery' => [],    
     ],
     [
@@ -123,9 +124,9 @@ $projects = [
         'heading' => 'LaporPak',        
         'category' => 'Civic · Tourism',
         'cover' => 'img/projects/laporpak/lp.png',
-        'summary' => 'Platform pengaduan berbasis web untuk studi kasus agrowisata dan pariwisata daerah.',
+        'summary' => 'Platform pengaduan berbasis web pada sprint saat magang MSIB .',
         'description' => 'Aplikasi pelaporan masyarakat dengan antarmuka web dan fitur pengelolaan laporan untuk membantu pencatatan serta pemantauan laporan.',
-        'tags' => ['React',  'Express.js'],
+        'tags' => ['Frontend',  'Sprint',  'MSIB'], 
         'tech' => ['React',  'Express.js'],
         'gallery' => [],
     ],
@@ -136,21 +137,24 @@ $projects = [
         'heading' => 'iQuiz',
         'cover' => 'img/projects/iquiz/qu.png',
         'category' => 'Mobile Application',
-        'summary' => 'Aplikasi kuis edukatif berbasis Flutter dengan backend Laravel ',
+        'summary' => 'Aplikasi kuis edukatif berbasis Flutter dengan backend Laravel untuk belajar yang lebih interaktif.',
         'description' => 'Aplikasi kuis edukatif berbasis Flutter dengan backend Laravel  untuk mendukung pengalaman belajar yang interaktif.',
-        'tech' => ['Flutter', 'Laravel'],
+        'tags' => ['FullStack',  'Mobile App'],
+        'tech' => ['Flutter', 'Laravel','FullStack'],
         'gallery' => [],
     ],
 
     // ---- Hanya muncul di baris "Karya lain" ----
     [
         'id' => 'laporsambah',
-        'card' => false,
-        'title' => 'LaporSambah',
+        'card' => true,
+        'title' => 'LaporSampah',
         'heading' => 'LaporSambah — Bank Sampah',
+        'cover' => 'img/projects/laporsambah/1.png',
         'category' => 'Environmental Web App',
         'description' => 'Platform web untuk mendukung pengelolaan bank sampah. (Sesuaikan dengan fitur yang benar-benar ada, misalnya pencatatan setoran, data nasabah, atau transaksi.)',
-        'tech' => ['Web Development', 'Bank Sampah'],
+        'tags' => ['Bank Sampah',  'FullStack'],
+        'tech' => ['Laravel'],
         'gallery' => [],
     ],
 ];
@@ -215,7 +219,8 @@ $cards = $projects->where('card', true)->values();
 $more = $projects->where('card', false)->values();
 @endphp
 
-<section class="section container" id="projects">
+<section class="section container cut-fx" id="projects">
+
     <div class="section-heading">
         <div>
             <p class="eyebrow">Selected work</p>

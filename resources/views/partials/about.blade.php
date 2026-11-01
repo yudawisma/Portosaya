@@ -1,5 +1,5 @@
-
-<section class="section container" id="about">
+<!-- 
+<section class="section container cut-fx" id="about">
     <div class="section-heading">
         <div>
             <p class="eyebrow">04 / ABOUT</p>
@@ -33,4 +33,4 @@
             </ul>
         </aside>
     </div>
-</section>
+</section> -->

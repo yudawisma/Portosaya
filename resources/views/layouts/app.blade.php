@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="cine-pre">
 
 <head>
     <meta charset="UTF-8">
@@ -13,11 +13,19 @@
     <script src="{{ asset('js/hooks.js') }}" defer></script>
     <script src="{{ asset('js/carousel.js') }}" defer></script>
 
+   <noscript>
+    <style>
+        html.cine-pre .hero-fx,
+        html.cine-pre .site-header { visibility: visible !important; }
+        html.cine-pre, html.cine-pre body { background: #fffdf9 !important; }
+    </style>
+</noscript>
+
 
     <!-- FONT KHUSUS -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 
     <link
         rel="stylesheet"
@@ -52,7 +60,7 @@
 
 <body>
     <div class="scroll-progress" aria-hidden="true"></div>
-     <div
+    <div
         class="lanyard-3d"
         id="lanyard3d"
         aria-label="Lanyard foto interaktif yang bisa ditarik">

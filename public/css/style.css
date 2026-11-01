@@ -36,7 +36,7 @@
 }
 
 html {
-    background: var(--bg);
+    background: #ffffff;
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
@@ -51,7 +51,7 @@ textarea {
 body {
     margin: 0;
     overflow-x: clip;          /* mencegah scroll samping dari latar full-bleed */
-    background: var(--bg);
+    background: #ffffff;
     color: var(--text);
     font-size: 15px;
     line-height: 1.7;
@@ -830,7 +830,7 @@ h3 {
 }
 
 /* Satu urutan animasi saat halaman dibuka */
-@keyframes hx-rise {
+/* @keyframes hx-rise {
     from { opacity: 0; transform: translateY(26px); }
     to   { opacity: 1; transform: none; }
 }
@@ -846,7 +846,7 @@ h3 {
 .hero-fx__card  { animation-delay: 0.1s; }
 .hero-fx__focus { animation-delay: 0.2s; }
 .hero-fx__name  { animation-delay: 0.3s; }
-.hero-fx__meta  { animation-delay: 0.5s; }
+.hero-fx__meta  { animation-delay: 0.5s; } */
 
 @media (max-width: 900px) {
     .hero-fx__photo-wrap {
@@ -1027,15 +1027,43 @@ h3 {
 
 /* latar terang selebar layar (section ini berada di dalam .container) */
 #projects {
-    --bg: #0a0605;                              /* background section */
-    --surface: #17100d;                         /* card: lebih terang dari bg */
-    --surface-soft: #1f1511;                    /* area screenshot, header modal */
-    --chip-bg: #241915;                         /* status, bar browser */
-    --line: rgba(255, 255, 255, 0.09);          /* border tipis */
-    --text: #f5efe9;
-    --ink: #fff;
-    --muted: rgba(255, 255, 255, 0.58);
-    --accent-soft: rgba(255, 90, 10, 0.14);
+    --sec-bg:
+        radial-gradient(50% 40% at 100% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 70%),
+        #ffffff;
+    --surface: #ffffff;
+    --surface-soft: #ffffff;
+    --chip-bg: #ffffff;
+    --line: rgba(23, 19, 15, 0.10);
+    --line-strong: rgba(23, 19, 15, 0.16);
+    --text: #17130f;
+    --ink: #17130f;
+    --muted: #6b645a;
+    --accent: #d9420a;
+    --accent-soft: rgba(255, 90, 10, 0.10);
+
+    position: relative;
+    isolation: isolate;
+    color: var(--text);
+}
+
+/* latar putih selebar layar */
+#projects::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: -1;
+    width: 100vw;
+    background: var(--sec-bg);
+    content: "";
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* kartu putih di atas latar putih: beri bayangan supaya terpisah */
+#projects .pc-card {
+    border-color: rgba(23, 19, 15, 0.14);
+    box-shadow: 0 10px 30px -18px rgba(23, 19, 15, 0.35);
 }
 
 /* Grid: 3 / 2 / 1 kolom */
@@ -3403,4 +3431,152 @@ html.lenis body {
     .pc-grid.is-dragging .pc-card {
         pointer-events: none;
     }
+}
+
+/* smoot */
+/* ===== Sembunyikan hero sampai JS siap (cegah flash) ===== */
+html.cine-pre .hero-fx,
+html.cine-pre .site-header {
+    visibility: hidden;
+}
+html.cine-pre,
+html.cine-pre body {
+    background: #0d0806;
+}
+
+/* ===== Loader ===== */
+.cine-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 28px 32px;
+    background: #0d0806;
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+}
+
+.cine-loader__top,
+.cine-loader__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cine-loader__count {
+    place-self: center;
+    font-family: var(--font-display);
+    font-size: clamp(72px, 16vw, 220px);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.cine-loader__count em {
+    font-style: normal;
+    color: var(--accent);
+}
+
+.cine-loader__bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.cine-ch {
+    display: inline-block;
+}
+
+.hero-fx__first.is-split {
+    background: none;
+    color: transparent;
+}
+
+.hero-fx__first .cine-ch {
+    background: linear-gradient(180deg, #ffffff 35%, #d6f1ff 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    padding-inline: 0.02em;
+}
+
+/* .hero-fx__first .cine-ch {
+    background: inherit;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+} */
+
+.cine-grain,
+.cine-cur-dot,
+.cine-cur-ring,
+.cine-cur-tag {
+    pointer-events: none;
+}
+
+/* ===== Cegah scroll ke samping ===== */
+html, body {
+    overflow-x: clip;
+    max-width: 100%;
+}
+
+.hero-fx {
+    overflow: clip;
+}
+
+/* ===== Ringankan hero di HP ===== */
+@media (max-width: 900px) {
+    .hero-fx__focus-wrap,
+    .hero-fx__focus-area {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin: 0;
+    }
+
+    .hero-fx__focus li {
+        white-space: normal;
+    }
+
+    .hero-fx__photo-real {
+        right: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-fx::before,
+    .hero-fx__photo-blurmask {
+        display: none;
+    }
+}
+
+/* cut page */
+.cut-fx {
+    --cut: 0px;
+    position: relative;
+    z-index: 2;
+    /* -100vw / 200vw supaya latar full-bleed (::before 100vw) tidak ikut terpotong */
+    clip-path: polygon(-100vw 0, 200vw 0, 200vw calc(100% - var(--cut)), -100vw 100%);
+}
+
+/* section berikutnya naik ke belakang wedge, supaya tidak muncul warna kosong */
+.cut-fx + * {
+    margin-top: -60vh;
+    padding-top: 60vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* HP: matikan biar ringan */
+@media (max-width: 768px) {
+    .cut-fx { clip-path: none; }
+    .cut-fx + * { margin-top: 0; padding-top: 0; }
 }

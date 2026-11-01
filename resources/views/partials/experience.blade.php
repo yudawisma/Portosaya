@@ -22,7 +22,7 @@
             <article class="timeline-item">
                 <span class="timeline-date">2025 — PRESENT</span>
 
-                <h4>Freelance AI & Web Developer</h4>
+                <h4>Freelance AI Agent & Web Developer</h4>
 
                 <p class="timeline-description">
                     Mengembangkan solusi berbasis web dan AI automation
@@ -36,10 +36,9 @@
                     <div class="experience-detail">
                         <h5>AI Agent & Workflow Automation</h5>
                         <p>
-                            Merancang workflow AI Agent menggunakan n8n
-                            dan Google Gemini API. Mengintegrasikan webhook
-                            untuk mengotomatisasi pemrosesan input multimodal,
-                            meliputi teks, audio, dan transkripsi suara.
+                            Merancang dan membangun sistem AI Agent Chatbot cerdas menggunakan platform workflow automation n8n yang
+                            terintegrasi langsung dengan Google Gemini API, memungkinkan pemrosesan data multimodal secara real- time
+                            meliputi teks, gambar, hingga transkripsi audio melalui endpoint Webhook.
                         </p>
                     </div>
 
@@ -54,12 +53,9 @@
                     </div>
 
                     <div class="experience-detail">
-                        <h5>API Testing & Client Collaboration</h5>
+                        <h5>Solve Client </h5>
                         <p>
-                            Menguji alur komunikasi API menggunakan Postman,
-                            menindaklanjuti feedback klien, melakukan
-                            penyesuaian fitur, dan membantu proses
-                            deployment aplikasi.
+                            Menggali kebutuhan dan menguji fungsionalitas bersama klien, lalu memantau aplikasi sampai stabil di produksi.
                         </p>
                     </div>
                 </div>
@@ -157,12 +153,9 @@
                     </div>
 
                     <div class="experience-detail">
-                        <h5>UI/UX & Product Presentation</h5>
+                        <h5>Product Presentation</h5>
                         <p>
-                            Menyusun wireframe dan prototype interaktif
-                            menggunakan Figma, menyiapkan dokumen pitch
-                            deck, serta mempresentasikan solusi produk
-                            akhir kepada stakeholder.
+                            Menyusun pitch deck dan mempresentasikan hasil akhir langsung di depan stakeholder.
                         </p>
                     </div>
                 </div>
@@ -170,7 +163,6 @@
                 <div class="tag-list">
                     <span>Laravel</span>
                     <span>Bootstrap 5</span>
-                    <span>Figma</span>
                     <span>Frontend</span>
                     <span>Team Collaboration</span>
                 </div>
@@ -194,24 +186,22 @@
                         <h5>LaporPak — Complaint & Mitigation Platform</h5>
                         <p>
                             Berkontribusi dalam pengembangan platform
-                            pengaduan berbasis web untuk studi kasus
-                            mitigasi yang berkaitan dengan agrowisata
-                            dan pariwisata daerah.
+                            pengaduan berbasis web untuk pengaduan masyarakat.
                         </p>
                     </div>
 
                     <div class="experience-detail">
                         <h5>WisaTani — E-Commerce Platform</h5>
                         <p>
-                            Merancang antarmuka e-commerce yang responsif
-                            dan mengintegrasikan komponen frontend
-                            dengan RESTful API backend.
+                            Mencari solusi untuk mendukung promosi produk pertanian dan agrowisata di daerah Cisarua, Kabupaten Bogor.
+                            Merancang antarmuka e-commerce pada Hackaton Nasional MSIB 2024 untuk mendukung promosi produk pertanian dan agrowisata.
                         </p>
                     </div>
                 </div>
 
                 <div class="tag-list">
                     <span>Web Development</span>
+                    <span>Hackaton Nasional</span>
                     <span>Responsive UI</span>
                     <span>REST API</span>
                     <span>Teamwork</span>
@@ -244,7 +234,7 @@
                         <h5>Humas</h5>
                         <p>
                             Berkontribusi dalam komunikasi dan koordinasi tim
-                            guna mendukung pelaksanaan acara.
+                            untuk mendukung pelaksanaan acara.
                         </p>
                     </div>
                 </div>
@@ -288,8 +278,8 @@
                     <div class="experience-detail">
                         <h5>Areas of Interest</h5>
                         <p>
-                            Software Development, Web Development,
-                            AI & Automation, serta Computer Vision.
+                            Pengembang Perangkat Lunak,
+                            Sistem Cerdas,
                         </p>
                     </div>
                 </div>
@@ -317,7 +307,7 @@
                 </p>
                 <div class="tag-list">
                     <span>Linux</span>
-                    <span>System Administration</span>
+                    <span>RedHat</span>
                     <span>CLI</span>
                 </div>
             </article>

@@ -5,158 +5,160 @@
 |--------------------------------------------------------------------------
 | Field wajib : id (unik), card, title, heading, category, description, gallery
 | Field opsional (ada fallback otomatis): cover, summary, tags, tech,
-|                metric, youtube, design, github, live
+| metric, youtube, design, github, live
 |
 | gallery : isi sebanyak yang kamu mau. Foto juga otomatis diambil dari
-|           folder public/img/projects/{id}/  (urut berdasarkan nama file)
+| folder public/img/projects/{id}/ (urut berdasarkan nama file)
 | youtube : link YouTube apa saja (watch?v=, youtu.be, shorts) atau ID 11 karakter
-| design  : link Figma / Stitch / Behance / Dribbble
-| card    : true = tampil sebagai kartu, false = hanya di baris "Karya lain"
+| design : link Figma / Stitch / Behance / Dribbble
+| card : true = tampil sebagai kartu, false = hanya di baris "Karya lain"
 */
 $projects = [
 
-    [
-        'id' => 'bisindo',
-        'card' => true,
-        'title' => 'BISINDO Recognition',
-        'heading' => 'Real-Time BISINDO Alphabet Recognition System',
-        'category' => 'Computer Vision · Skripsi',
-        'cover' => 'img/projects/bisindo/A.png',
-        'summary' => 'Pengenalan alfabet Bahasa Isyarat Indonesia secara real-time melalui webcam, memakai MediaPipe Hands dan CNN.',
-        'description' => 'Proyek skripsi yang berfokus pada perancangan dan implementasi sistem pengenalan alfabet BISINDO secara real-time melalui webcam. MediaPipe Hands digunakan untuk mendeteksi landmark tangan dan membantu preprocessing citra ke dalam Region of Interest (ROI). Citra hasil preprocessing digunakan untuk melatih model CNN yang mengklasifikasikan 26 kelas alfabet.',
-        'metric' => ['73.08%', 'Validation accuracy'],
-        'tags' => ['Python', 'MediaPipe', 'CNN', 'OpenCV'],
-        'tech' => ['Python', 'TensorFlow / Keras', 'MediaPipe Hands', 'OpenCV', 'Convolutional Neural Network', 'Real-Time Recognition'],
-        'gallery' => [],
-        // 'youtube' => 'https://youtu.be/XXXXXXXXXXX',
-        // 'github'  => 'https://github.com/yudawisma/bisindo',
-    ],
-    [
-        'id' => 'lapor-brebes',
-        'card' => true,
-        'title' => 'Lapor Brebes',
-        'heading' => 'Lapor Brebes — Public Complaint Platform',
-        'category' => 'Fullstack · Civic Tech',
-        'cover' => 'img/projects/lapor-brebes/1.png',
-        'summary' => 'Platform pengaduan masyarakat Kabupaten Brebes: lapor tanpa akun, lacak tiket, dan pantau tindak lanjut.',
-        'description' => 'Lapor Brebes membantu warga menyampaikan laporan tanpa harus membuat akun, melacak status tiket pengaduan, serta memantau tindak lanjutnya. Mencakup dashboard admin untuk verifikasi dan disposisi, peta sebaran pengaduan, serta statistik kinerja Organisasi Perangkat Daerah (OPD). Antarmuka responsif untuk desktop dan seluler.',
-        'tags' => ['React', 'Laravel', 'Inertia', 'UI/UX'],
-        'tech' => ['React', 'Laravel', 'Inertia', 'Stitch', 'User Flow', 'Dashboard Design', 'Data Visualization', 'Responsive Design'],
-        'gallery' => [],
-        // Foto tambahan: taruh di public/img/projects/lapor-brebes-uiux/ (1.png, 2.png, ...)
-        // 'youtube' => 'https://youtu.be/XXXXXXXXXXX',
-        // 'design'  => 'https://www.figma.com/design/xxxx',
-        // 'github'  => 'https://github.com/yudawisma/lapor-brebes',
-        // 'live'    => 'https://lapor-brebes.example.com',
-    ],
-    [
-        'id' => 'ssreport',
-        'card' => true,
-        'title' => 'SSREPORT',
-        'heading' => 'Srengseng Sawah Report',
-        'category' => 'Web Application · Civic Tech',
-        'cover' => 'img/projects/ssreport/55.png',
-        'summary' => 'Platform pengaduan warga berbasis web, dari alur aplikasi, database, dan pengujian API sampai deployment.',
-        'description' => 'Website pengaduan masyarakat untuk membantu warga menyampaikan aspirasi dan laporan secara online. Pengembangan mencakup antarmuka, backend, revisi fitur, dan deployment.',
-        'tags' => ['Laravel', 'Bootstrap', 'MySQL'],
-        'tech' => ['Laravel', 'Bootstrap', 'MySQL', 'Full-Stack Development'],
-        'gallery' => [],
-        'live'    => 'https://ssreport.my.id',
-    ],
-    [
-        'id' => 'ai-agent',
-        'card' => true,
-        'title' => 'AI Agent Automation',
-        'heading' => 'AI Agent & Workflow Automation',
-        'category' => 'AI & Automation',
-        'cover' => 'img/projects/ai-agent/2.png',
-        'summary' => 'Chatbot dengan workflow n8n, Google Gemini API, dan webhook untuk memproses teks, audio, dan transkripsi suara.',
-        'description' => 'Pengembangan chatbot AI yang memanfaatkan model AI dan workflow automation untuk memproses percakapan teks, audio, serta transkripsi suara.',
-        'tags' => ['n8n', 'Gemini API', 'Webhook'],
-        'tech' => ['AI Agent', 'Google Gemini', 'n8n', 'Webhook', 'Automation'],
-        'gallery' => [],
-    ],
-    [
-        'id' => 'siba',
-        'card' => true,
-        'title' => 'SIBa',
-        'heading' => 'Sistem Informasi Manajemen Sekolah Ibu Bahagia',
-        'category' => 'Information System · Web',
-        'cover' => 'img/projects/siba/1.png',
-        'summary' => 'Website manajemen Sekolah Ibu Bahagia: struktur organisasi, kurikulum, acara, aktivitas, dan pesan pengunjung.',
-        'description' => 'Sistem Informasi Manajemen Sekolah Ibu Bahagia (SIBa) di Desa Sirampog, Kabupaten Brebes. Mendukung pengelolaan struktur organisasi dan kurikulum secara digital, acara dan aktivitas, form kontak pengunjung, serta dashboard statistik interaktif. Dikembangkan dengan Laravel 10 dan Bootstrap 5 memakai metode Waterfall.',
-        'tags' => ['Laravel 10', 'Bootstrap 5', 'MySQL', 'Chart.js'],
-        'tech' => ['Laravel 10', 'PHP', 'Bootstrap 5', 'MySQL', 'Chart.js', 'Role-Based Access Control'],
-        'gallery' => [],
-    ],
-    [
-        'id' => 'certificate',
-        'card' => true,
-        'title' => 'Certificate Generator',
-        'heading' => 'Certificate Generator',
-        'category' => 'Web Development · Internship',
-        'cover' => 'img/sert.jpg',
-        'summary' => 'Modul frontend aplikasi generator sertifikat digital, dikerjakan bersama tim di program virtual internship.',
-        'description' => 'Aplikasi web untuk membantu proses pembuatan sertifikat digital berdasarkan data peserta secara lebih praktis. Saya mengerjakan modul frontend bersama tim dalam program virtual internship.',
-        'tags' => ['Laravel', 'Bootstrap 5', 'Figma'],
-        'tech' => ['Laravel', 'Bootstrap 5', 'Figma'],
-        'gallery' => [],
-        'live'    => 'https://certificategenerate.my.id',
-        // 'design' => 'https://www.figma.com/design/xxxx',
-    ],
-    [
-        'id' => 'wisatani',
-        'card' => true,
-        'title' => 'WisaTani',
-        'heading' => 'WisaTani',
-        'category' => 'Agriculture & Tourism',
-        'cover' => 'img/wt.png',
-        'summary' => 'UI responsif dan integrasi komponen frontend dengan RESTful API untuk platform agrowisata.',
-        'description' => 'Platform digital yang menggabungkan informasi agrowisata, produk pertanian, dan kegiatan edukasi. Saya merancang UI responsif dan mengintegrasikan komponen frontend dengan RESTful API backend.',
-        'tags' => ['NextJS', 'REST API', 'Responsive UI'],
-        'tech' => ['NextJS', 'Frontend', 'REST API', 'Responsive UI'],
-        'gallery' => [],    
-    ],
-    [
-        'id' => 'laporpak',
-        'card' => true,
-        'title' => 'LaporPak',
-        'heading' => 'LaporPak',        
-        'category' => 'Civic · Tourism',
-        'cover' => 'img/projects/laporpak/lp.png',
-        'summary' => 'Platform pengaduan berbasis web pada sprint saat magang MSIB .',
-        'description' => 'Aplikasi pelaporan masyarakat dengan antarmuka web dan fitur pengelolaan laporan untuk membantu pencatatan serta pemantauan laporan.',
-        'tags' => ['Frontend',  'Sprint',  'MSIB'], 
-        'tech' => ['React',  'Express.js'],
-        'gallery' => [],
-    ],
-    [
-        'id' => 'iquiz',
-        'card' => true,
-        'title' => 'iQuiz',
-        'heading' => 'iQuiz',
-        'cover' => 'img/projects/iquiz/qu.png',
-        'category' => 'Mobile Application',
-        'summary' => 'Aplikasi kuis edukatif berbasis Flutter dengan backend Laravel untuk belajar yang lebih interaktif.',
-        'description' => 'Aplikasi kuis edukatif berbasis Flutter dengan backend Laravel  untuk mendukung pengalaman belajar yang interaktif.',
-        'tags' => ['FullStack',  'Mobile App'],
-        'tech' => ['Flutter', 'Laravel','FullStack'],
-        'gallery' => [],
-    ],
+[
+'id' => 'bisindo',
+'card' => true,
+'title' => 'BISINDO Recognition',
+'heading' => 'Real-Time BISINDO Alphabet Recognition System',
+'category' => 'Computer Vision · Skripsi',
+'cover' => 'img/projects/bisindo/A.png',
+'summary' => 'Pengenalan alfabet Bahasa Isyarat Indonesia secara real-time melalui webcam, memakai MediaPipe Hands dan CNN.',
+'description' => 'Proyek skripsi yang berfokus pada perancangan dan implementasi sistem pengenalan alfabet BISINDO secara real-time melalui webcam. MediaPipe Hands digunakan untuk mendeteksi landmark tangan dan membantu preprocessing citra ke dalam Region of Interest (ROI). Citra hasil preprocessing digunakan untuk melatih model CNN yang mengklasifikasikan 26 kelas alfabet.',
+'metric' => ['73.08%', 'Validation accuracy'],
+'tags' => ['Python', 'MediaPipe', 'CNN', 'OpenCV'],
+'tech' => ['Python', 'TensorFlow / Keras', 'MediaPipe Hands', 'OpenCV', 'Convolutional Neural Network', 'Real-Time Recognition'],
+'gallery' => [],
+// 'youtube' => 'https://youtu.be/XXXXXXXXXXX',
+// 'github' => 'https://github.com/yudawisma/bisindo',
+],
+[
+'id' => 'lapor-brebes',
+'card' => true,
+'title' => 'Lapor Brebes',
+'heading' => 'Lapor Brebes — Public Complaint Platform',
+'category' => 'Fullstack · Civic Tech',
+'cover' => 'img/projects/lapor-brebes/1.png',
+'summary' => 'Platform pengaduan masyarakat Kabupaten Brebes: lapor tanpa akun, lacak tiket, dan pantau tindak lanjut.',
+'description' => 'Lapor Brebes membantu warga menyampaikan laporan tanpa harus membuat akun, melacak status tiket pengaduan, serta memantau tindak lanjutnya. Mencakup dashboard admin untuk verifikasi dan disposisi, peta sebaran pengaduan, serta statistik kinerja Organisasi Perangkat Daerah (OPD). Antarmuka responsif untuk desktop dan seluler.',
+'tags' => ['React', 'Laravel', 'Inertia', 'UI/UX'],
+'tech' => ['React', 'Laravel', 'Inertia', 'Stitch', 'User Flow', 'Dashboard Design', 'Data Visualization', 'Responsive Design'],
+'gallery' => [],
+// Foto tambahan: taruh di public/img/projects/lapor-brebes-uiux/ (1.png, 2.png, ...)
+// 'youtube' => 'https://youtu.be/XXXXXXXXXXX',
+// 'design' => 'https://www.figma.com/design/xxxx',
+// 'github' => 'https://github.com/yudawisma/lapor-brebes',
+// 'live' => 'https://lapor-brebes.example.com',
+],
+[
+'id' => 'ssreport',
+'card' => true,
+'title' => 'SSREPORT',
+'heading' => 'Srengseng Sawah Report',
+'category' => 'Web Application · Civic Tech',
+'cover' => 'img/projects/ssreport/55.png',
+'summary' => 'Platform pengaduan warga berbasis web, dari alur aplikasi, database, dan pengujian API sampai deployment.',
+'description' => 'Website pengaduan masyarakat untuk membantu warga menyampaikan aspirasi dan laporan secara online. Pengembangan mencakup antarmuka, backend, revisi fitur, dan deployment.',
+'tags' => ['Laravel', 'Bootstrap', 'MySQL'],
+'tech' => ['Laravel', 'Bootstrap', 'MySQL', 'Full-Stack Development'],
+'gallery' => [],
+'live' => 'https://ssreport.my.id',
+],
+[
+'id' => 'ai-agent',
+'card' => true,
+'title' => 'AI Agent Automation',
+'heading' => 'AI Agent & Workflow Automation',
+'category' => 'AI & Automation',
+'cover' => 'img/projects/ai-agent/2.png',
+'summary' => 'Chatbot dengan workflow n8n, Google Gemini API, dan webhook untuk memproses teks, audio, dan transkripsi suara.',
+'description' => 'Pengembangan chatbot AI yang memanfaatkan model AI dan workflow automation untuk memproses percakapan teks, audio, serta transkripsi suara.',
+'tags' => ['n8n', 'Gemini API', 'Webhook'],
+'tech' => ['AI Agent', 'Google Gemini', 'n8n', 'Webhook', 'Automation'],
+'gallery' => [],
+],
+[
+'id' => 'siba',
+'card' => true,
+'title' => 'SIBa',
+'heading' => 'Sistem Informasi Manajemen Sekolah Ibu Bahagia',
+'category' => 'Information System · Web',
+'cover' => 'img/projects/siba/1.png',
+'summary' => 'Website manajemen Sekolah Ibu Bahagia: struktur organisasi, kurikulum, acara, aktivitas, dan pesan pengunjung.',
+'description' => 'Sistem Informasi Manajemen Sekolah Ibu Bahagia (SIBa) di Desa Sirampog, Kabupaten Brebes. Mendukung pengelolaan struktur organisasi dan kurikulum secara digital, acara dan aktivitas, form kontak pengunjung, serta dashboard statistik interaktif. Dikembangkan dengan Laravel 10 dan Bootstrap 5 memakai metode Waterfall.',
+'tags' => ['Laravel 10', 'Bootstrap 5', 'MySQL', 'Chart.js'],
+'tech' => ['Laravel 10', 'PHP', 'Bootstrap 5', 'MySQL', 'Chart.js', 'Role-Based Access Control'],
+'gallery' => [],
+],
+[
+'id' => 'certificate',
+'card' => true,
+'title' => 'Certificate Generator',
+'heading' => 'Certificate Generator',
+'category' => 'Web Development · Internship',
+'cover' => 'img/projects/certificate/1.png',
+'summary' => 'Modul frontend aplikasi generator sertifikat digital, dikerjakan bersama tim di program virtual internship.',
+'description' => 'Aplikasi web untuk membantu proses pembuatan sertifikat digital berdasarkan data peserta secara lebih praktis. Saya mengerjakan modul frontend bersama tim dalam program virtual internship.',
+'tags' => ['Laravel', 'Bootstrap 5', 'Figma'],
+'tech' => ['Laravel', 'Bootstrap 5', 'Figma'],
+'gallery' => [],
+'Demo' => 'https://drive.google.com/file/d/15_K0a5Bcj6_2th-w7JUbh83vFgzDwArl/view?usp=sharing',
+'design' => 'https://www.figma.com/board/yNXJtTFpTNmFtzYWlSTbbk/virtual-intern?node-id=0-1&p=f',
 
-    // ---- Hanya muncul di baris "Karya lain" ----
-    [
-        'id' => 'laporsambah',
-        'card' => true,
-        'title' => 'LaporSampah',
-        'heading' => 'LaporSambah — Bank Sampah',
-        'cover' => 'img/projects/laporsambah/1.png',
-        'category' => 'Environmental Web App',
-        'description' => 'Platform web untuk mendukung pengelolaan bank sampah. (Sesuaikan dengan fitur yang benar-benar ada, misalnya pencatatan setoran, data nasabah, atau transaksi.)',
-        'tags' => ['Bank Sampah',  'FullStack'],
-        'tech' => ['Laravel'],
-        'gallery' => [],
-    ],
+// 'design' => 'https://www.figma.com/design/xxxx',
+],
+[
+'id' => 'wisatani',
+'card' => true,
+'title' => 'WisaTani',
+'heading' => 'WisaTani',
+'category' => 'Agriculture & Tourism',
+'cover' => 'img/projects/wisatani/wt.png',
+'summary' => 'UI responsif dan integrasi komponen frontend dengan RESTful API untuk platform agrowisata.',
+'description' => 'Platform digital yang menggabungkan informasi agrowisata, produk pertanian, dan kegiatan edukasi. Saya merancang UI responsif dan mengintegrasikan komponen frontend dengan RESTful API backend.',
+'tags' => ['NextJS', 'REST API', 'Responsive UI'],
+'tech' => ['NextJS', 'Frontend', 'REST API', 'Responsive UI'],
+'gallery' => [],
+],
+[
+'id' => 'laporpak',
+'card' => true,
+'title' => 'LaporPak',
+'heading' => 'LaporPak',
+'category' => 'Civic · Tourism',
+'cover' => 'img/projects/laporpak/lp.png',
+'summary' => 'Platform pengaduan berbasis web pada sprint saat magang MSIB .',
+'description' => 'Aplikasi pelaporan masyarakat dengan antarmuka web dan fitur pengelolaan laporan untuk membantu pencatatan serta pemantauan laporan.',
+'tags' => ['Frontend', 'Sprint', 'MSIB'],
+'tech' => ['React', 'Express.js'],
+'gallery' => [],
+],
+[
+'id' => 'iquiz',
+'card' => true,
+'title' => 'iQuiz',
+'heading' => 'iQuiz',
+'cover' => 'img/projects/iquiz/qu.png',
+'category' => 'Mobile Application',
+'summary' => 'Iquiz merupakan sebuah aplikasi belajar mandiri yang membantu pembelajaran lebih interaktif dan menarik. Aplikasi ini membantu siswa untuk mempelajari materi dengan cara yang lebih menyenangkan dan interaktif. Selain itu Iquiz sendiri mempunyai fitur umpan balik instan, siswa dapat mengetahui seberapa baik pemahaman mereka terhadap suatu topik dan memperbaiki kesalahan mereka segera. Asesmen online juga memudahkan proses pengumpulan data dan analisis hasil secara real-time. Aplikasi Iquiz ini bisa digunakan sebagai sumber hiburan. .',
+'description' => 'Aplikasi kuis edukatif berbasis Flutter dengan backend Laravel untuk mendukung pengalaman belajar yang interaktif.',
+'tags' => ['FullStack', 'Mobile App'],
+'tech' => ['Flutter', 'Laravel','FullStack'],
+'gallery' => [],
+],
+
+// ---- Hanya muncul di baris "Karya lain" ----
+[
+'id' => 'laporsampah',
+'card' => true,
+'title' => 'LaporSampah',
+'heading' => 'LaporSambah — Bank Sampah',
+'cover' => 'img/projects/laporsambah/1.png',
+'category' => 'Environmental Web App',
+'description' => 'Platform web untuk mendukung pengelolaan bank sampah. (Sesuaikan dengan fitur yang benar-benar ada, misalnya pencatatan setoran, data nasabah, atau transaksi.)',
+'tags' => ['Bank Sampah', 'FullStack'],
+'tech' => ['Laravel'],
+'gallery' => [],
+],
 ];
 
 /*
@@ -164,56 +166,56 @@ $projects = [
 | supaya Blade tidak error "Undefined array key".
 */
 $projects = collect($projects)
-    ->unique('id')
-    ->map(function ($p) {
-        $tech = $p['tech'] ?? [];
+->unique('id')
+->map(function ($p) {
+$tech = $p['tech'] ?? [];
 
-        // 1) Foto otomatis dari public/img/projects/{id}/
-        $folder = public_path('img/projects/' . $p['id']);
-        $auto = [];
-        if (is_dir($folder)) {
-            $auto = collect(\Illuminate\Support\Facades\File::files($folder))
-                ->filter(fn ($f) => in_array(strtolower($f->getExtension()), ['png', 'jpg', 'jpeg', 'webp']))
-                ->sortBy(fn ($f) => $f->getFilename(), SORT_NATURAL | SORT_FLAG_CASE)
-                ->map(fn ($f) => 'img/projects/' . $p['id'] . '/' . $f->getFilename())
-                ->values()
-                ->all();
-        }
-        $gallery = array_values(array_unique(array_merge($p['gallery'] ?? [], $auto)));
+// 1) Foto otomatis dari public/img/projects/{id}/
+$folder = public_path('img/projects/' . $p['id']);
+$auto = [];
+if (is_dir($folder)) {
+$auto = collect(\Illuminate\Support\Facades\File::files($folder))
+->filter(fn ($f) => in_array(strtolower($f->getExtension()), ['png', 'jpg', 'jpeg', 'webp']))
+->sortBy(fn ($f) => $f->getFilename(), SORT_NATURAL | SORT_FLAG_CASE)
+->map(fn ($f) => 'img/projects/' . $p['id'] . '/' . $f->getFilename())
+->values()
+->all();
+}
+$gallery = array_values(array_unique(array_merge($p['gallery'] ?? [], $auto)));
 
-        // 2) Video: terima ID ATAU link YouTube apa saja (watch?v=, youtu.be, shorts)
-        $yt = $p['youtube'] ?? null;
-        if ($yt && preg_match('~(?:youtu\.be/|v=|embed/|shorts/)([A-Za-z0-9_-]{11})~', $yt, $m)) {
-            $yt = $m[1];
-        }
-        $yt = ($yt && preg_match('/^[A-Za-z0-9_-]{11}$/', $yt)) ? $yt : null;
+// 2) Video: terima ID ATAU link YouTube apa saja (watch?v=, youtu.be, shorts)
+$yt = $p['youtube'] ?? null;
+if ($yt && preg_match('~(?:youtu\.be/|v=|embed/|shorts/)([A-Za-z0-9_-]{11})~', $yt, $m)) {
+$yt = $m[1];
+}
+$yt = ($yt && preg_match('/^[A-Za-z0-9_-]{11}$/', $yt)) ? $yt : null;
 
-        // 3) Link desain: pilih ikon sesuai domain
-        $design = $p['design'] ?? null;
-        $designIcon = 'fa-solid fa-pen-ruler';
-        if ($design) {
-            $host = strtolower((string) parse_url($design, PHP_URL_HOST));
-            if (str_contains($host, 'figma'))        $designIcon = 'fa-brands fa-figma';
-            elseif (str_contains($host, 'behance'))  $designIcon = 'fa-brands fa-behance';
-            elseif (str_contains($host, 'dribbble')) $designIcon = 'fa-brands fa-dribbble';
-        }
+// 3) Link desain: pilih ikon sesuai domain
+$design = $p['design'] ?? null;
+$designIcon = 'fa-solid fa-pen-ruler';
+if ($design) {
+$host = strtolower((string) parse_url($design, PHP_URL_HOST));
+if (str_contains($host, 'figma')) $designIcon = 'fa-brands fa-figma';
+elseif (str_contains($host, 'behance')) $designIcon = 'fa-brands fa-behance';
+elseif (str_contains($host, 'dribbble')) $designIcon = 'fa-brands fa-dribbble';
+}
 
-        return array_merge(
-            ['metric' => null, 'github' => null, 'live' => null, 'design' => null],
-            $p,
-            [
-                'youtube'     => $yt,
-                'design'      => $design,
-                'design_icon' => $designIcon,
-                'gallery'     => $gallery,
-                'tech'        => $tech,
-                'cover'       => $p['cover'] ?? ($gallery[0] ?? 'img/placeholder.png'),
-                'summary'     => $p['summary'] ?? \Illuminate\Support\Str::limit($p['description'] ?? '', 130),
-                'tags'        => $p['tags'] ?? array_slice($tech, 0, 3),
-            ]
-        );
-    })
-    ->values();
+return array_merge(
+['metric' => null, 'github' => null, 'live' => null, 'design' => null],
+$p,
+[
+'youtube' => $yt,
+'design' => $design,
+'design_icon' => $designIcon,
+'gallery' => $gallery,
+'tech' => $tech,
+'cover' => $p['cover'] ?? ($gallery[0] ?? 'img/placeholder.png'),
+'summary' => $p['summary'] ?? \Illuminate\Support\Str::limit($p['description'] ?? '', 130),
+'tags' => $p['tags'] ?? array_slice($tech, 0, 3),
+]
+);
+})
+->values();
 
 $cards = $projects->where('card', true)->values();
 $more = $projects->where('card', false)->values();
@@ -304,10 +306,10 @@ $more = $projects->where('card', false)->values();
     @php
     $slides = [];
     if (! empty($p['youtube'])) {
-        $slides[] = ['type' => 'video', 'id' => $p['youtube']];
+    $slides[] = ['type' => 'video', 'id' => $p['youtube']];
     }
     foreach ($p['gallery'] as $img) {
-        $slides[] = ['type' => 'image', 'src' => $img];
+    $slides[] = ['type' => 'image', 'src' => $img];
     }
     @endphp
 

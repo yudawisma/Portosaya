@@ -291,7 +291,7 @@
                 </div>
             </article>
 
-            {{-- CERTIFICATIONS & TRAINING --}}
+            <!-- {{-- CERTIFICATIONS & TRAINING --}}
             <h3 class="timeline-heading timeline-subheading">
                 Certifications & Training
             </h3>
@@ -364,7 +364,7 @@
                     <span>Machine Learning</span>
                     <span>NLP</span>
                 </div>
-            </article>
+            </article> -->
         </div>
     </div>
 </section>

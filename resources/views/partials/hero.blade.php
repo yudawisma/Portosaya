@@ -2,7 +2,7 @@
 
     {{-- Foto asli tajam --}}
     <img class="hero-fx__photo-real"
-        src="{{ asset('img/pas foto ijasah.jpeg') }}"
+        src="{{ asset('img/PAS FOTO.jpeg') }}"
         alt="Foto Yudha Wisma Wardani"
         fetchpriority="high" decoding="async">
 

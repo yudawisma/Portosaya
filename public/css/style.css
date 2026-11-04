@@ -3740,3 +3740,8 @@ font {
     background: none !important;
     box-shadow: none !important;
 }
+
+/* biar gk berat  */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

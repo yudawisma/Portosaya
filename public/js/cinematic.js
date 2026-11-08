@@ -21,9 +21,9 @@
         grain: true,
         cursor: true,
         magnetic: true,
-        sphere: true,
-        marquee: true,
-        skew: true,
+        // sphere: true,
+        // marquee: true,
+        // skew: true,
     };
 
     const $ = (s, c = document) => c.querySelector(s);
@@ -184,19 +184,18 @@
 
         /* ---------- 02. Lenis ---------- */
         let lenis = null;
-        if (window.Lenis) {
-            lenis = new window.Lenis({
-                duration: 1.15,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                smoothWheel: true,
-                syncTouch: false,
-            });
-            window.lenis = lenis;
-            lenis.on("scroll", ScrollTrigger.update);
-            gsap.ticker.add((time) => lenis.raf(time * 1000));
-            gsap.ticker.lagSmoothing(0);
-            lenis.stop(); // dikunci sampai intro selesai
-        }
+if (window.Lenis) {
+    lenis = new window.Lenis({
+        lerp: 0.09,
+        smoothWheel: true,
+        syncTouch: false,
+    });
+    window.lenis = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+    lenis.stop(); // dikunci sampai intro selesai
+}
 
         /* ---------- Siapkan hero & loader ---------- */
         const hero = prepareHero();
@@ -577,7 +576,7 @@
             );
         }
 
-        /* =================================================
+        /* =================================================    
            Kecepatan scroll (dipakai marquee & skew)
            ================================================= */
         function initScrollVelocity() {

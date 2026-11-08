@@ -22,7 +22,7 @@
                 </p>
 
                 <a href="#projects" class="hero-fx__cta">
-                    Explore Projects <span aria-hidden="true">↗</span>
+                    Proyek Saya <span aria-hidden="true">↗</span>
                 </a>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <a href="#contact"
                 class="hero-fx__resume"
                 target="_blank" rel="noopener noreferrer">
-                VIEW RESUME <span aria-hidden="true">↗</span>
+                LIHAT RESUME <span aria-hidden="true">↗</span>
             </a>
         </div>
 
@@ -46,7 +46,7 @@
             <div class="hero-fx__meta">
                 <div class="hero-fx__copy">
                     <i class="hero-fx__ruler" aria-hidden="true"></i>
-                    <span>SOFTWARE DEVELOPER</span>
+                    <span>JUNIOR PENGEMBANG PERANGKAT LUNAK</span>
                 </div>
 
                 <div class="hero-fx__social">

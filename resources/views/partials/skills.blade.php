@@ -2,8 +2,8 @@
     <div class="container">
         <div class="section-heading">
             <div>
-                <p class="eyebrow">05 / TECHNICAL EXPERTISE</p>
-                <h2>Tools for building<br><span>better systems.</span></h2>
+                <p class="eyebrow">05 / KEAHLIAN TEKNIS</p>
+                <h2>Teknologi untuk membangun<br><span>sistem yang lebih baik.</span></h2>
             </div>
 
             <p class="section-intro">
@@ -22,10 +22,10 @@
                     </span>
                 </div>
 
-                <h3>Software Development</h3>
-                <p>Application development and web interfaces.</p>
+                <h3>Pengembangan Perangkat Lunak</h3>
+                <p>Pengembangan aplikasi dan antarmuka web.</p>
 
-                <div class="tech-list">
+                <div class="tech-list" translate="no">
                     <span class="tech-item"><i class="devicon-php-plain colored"></i> PHP</span>
                     <span class="tech-item"><i class="devicon-laravel-original colored"></i> Laravel</span>
                     <span class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
@@ -39,7 +39,7 @@
                 </div>
             </article>
 
-            <!-- AI & Automation -->
+            <!-- AI & Otomasi -->
             <article class="skill-card">
                 <div class="skill-card-top">
                     <span class="skill-index">02</span>
@@ -48,24 +48,18 @@
                     </span>
                 </div>
 
-                <h3>AI & Automation</h3>
-                <p>Workflow integration and AI-powered processes.</p>
+                <h3>AI & Otomasi</h3>
+                <p>Integrasi alur kerja dan proses berbasis AI.</p>
 
-                <div class="tech-list">
+                <div class="tech-list" translate="no">
                     <span class="tech-item"><i class="fa-solid fa-diagram-project"></i> n8n</span>
                     <span class="tech-item"><i class="fa-solid fa-brain"></i> Gemini API</span>
                     <span class="tech-item"><i class="fa-solid fa-diagram-project"></i> Webhook</span>
                     <span class="tech-item"><i class="fa-solid fa-plug"></i> REST API</span>
                     <span class="tech-item"><i class="fa-solid fa-network-wired"></i> Deep Learning</span>
-                    <span class="tech-item">
-                        <i class="devicon-google-plain"></i> Gemini
-                    </span>
-                    <span class="tech-item">
-                        <i class="fa-solid fa-robot"></i> ChatGPT
-                    </span>
-                    <span class="tech-item">
-                        <i class="fa-solid fa-brain"></i> Claude
-                    </span>
+                    <span class="tech-item"><i class="devicon-google-plain"></i> Gemini</span>
+                    <span class="tech-item"><i class="fa-solid fa-robot"></i> ChatGPT</span>
+                    <span class="tech-item"><i class="fa-solid fa-brain"></i> Claude</span>
                 </div>
             </article>
 
@@ -78,10 +72,10 @@
                     </span>
                 </div>
 
-                <h3>Computer Vision</h3>
-                <p>Image processing and real-time recognition.</p>
+                <h3><span translate="no">Computer Vision</span></h3>
+                <p>Pengolahan citra dan pengenalan objek secara real-time.</p>
 
-                <div class="tech-list">
+                <div class="tech-list" translate="no">
                     <span class="tech-item"><i class="devicon-tensorflow-original colored"></i> TensorFlow</span>
                     <span class="tech-item"><i class="devicon-keras-plain colored"></i> Keras</span>
                     <span class="tech-item"><i class="devicon-opencv-plain colored"></i> OpenCV</span>
@@ -90,7 +84,7 @@
                 </div>
             </article>
 
-            <!-- Tools & Engineering -->
+            <!-- Database & Alat Pengembangan -->
             <article class="skill-card">
                 <div class="skill-card-top">
                     <span class="skill-index">04</span>
@@ -99,22 +93,18 @@
                     </span>
                 </div>
 
-                <h3>Database & Development Tools</h3>
-                <p>Development workflow, testing, and data storage.</p>
+                <h3>Database & Alat Pengembangan</h3>
+                <p>Alur kerja pengembangan, pengujian, dan penyimpanan data.</p>
 
-                <div class="tech-list">
+                <div class="tech-list" translate="no">
                     <span class="tech-item"><i class="devicon-mysql-original colored"></i> MySQL</span>
-                    <span class="tech-item">
-                        <i class="fa-solid fa-database"></i> DBeaver</span>
-                    <span class="tech-item">
-                        <i class="devicon-vscode-plain colored"></i> VS Code</span>
+                    <span class="tech-item"><i class="fa-solid fa-database"></i> DBeaver</span>
+                    <span class="tech-item"><i class="devicon-vscode-plain colored"></i> VS Code</span>
                     <span class="tech-item"><i class="devicon-git-plain colored"></i> Git</span>
                     <span class="tech-item"><i class="devicon-github-original"></i> GitHub</span>
                     <span class="tech-item"><i class="devicon-postman-plain colored"></i> Postman</span>
                     <span class="tech-item"><i class="devicon-figma-plain colored"></i> Figma</span>
-                    <span class="tech-item">
-                        <i class="fa-solid fa-pen-ruler"></i> Stitch AI
-                    </span>
+                    <span class="tech-item"><i class="fa-solid fa-pen-ruler"></i> Stitch AI</span>
                     <span class="tech-item"><i class="devicon-linux-plain"></i> Linux</span>
                 </div>
             </article>

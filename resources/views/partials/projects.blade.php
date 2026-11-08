@@ -225,11 +225,11 @@ $more = $projects->where('card', false)->values();
 
     <div class="section-heading">
         <div>
-            <p class="eyebrow">Selected work</p>
-            <h2>Projects that solve<br><span>real problems.</span></h2>
+            <p class="eyebrow">Karya pilihan</p>
+            <h2>Proyek yang menyelesaikan<br><span>masalah nyata.</span></h2>
         </div>
         <p class="section-intro">
-            {{ $projects->count() }} proyek dari software development, AI automation,
+            {{ $projects->count() }} proyek dari pengembangan perangkat lunak, otomasi AI,
             dan computer vision. Klik kartu untuk melihat screenshot dan detail teknis.
         </p>
     </div>

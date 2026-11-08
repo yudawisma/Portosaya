@@ -1,12 +1,12 @@
 <section class="section container" id="experience">
     <div class="section-heading">
         <div>
-            <p class="eyebrow">03 / CAREER TIMELINE</p>
-            <h2>Experience &<br><span>education.</span></h2>
+            <p class="eyebrow">03 / LINTASAN KARIR </p>
+            <h2>Pengalaman &<br><span>Pendidikan.</span></h2>
         </div>
 
         <p class="section-intro">
-            Perjalanan saya dalam software development, AI automation,
+            Perjalanan saya dalam mengembangkan perangkat lunak, Otomasi AI,
             dan computer vision melalui pengalaman profesional,
             kolaborasi tim, serta penelitian akademik.
         </p>

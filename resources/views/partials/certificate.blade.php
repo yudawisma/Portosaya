@@ -26,13 +26,13 @@
     <div class="container">
 
         <div class="section-heading text-center">
-            <span class="section-eyebrow">CERTIFICATIONS</span>
+            <span class="section-eyebrow">SERTIFIKASI</span>
             <h2 class="section-title">
-                Certificates & <span>Achievements</span>
+                Sertifikat & <span>Pencapaian</span>
             </h2>
             <p class="section-description mx-auto">
-                A collection of certifications, achievements, and learning experiences
-                that support my journey in technology and software development.
+                Kumpulan sertifikasi, pencapaian, dan pengalaman belajar
+                yang mendukung perjalanan saya di bidang teknologi dan pengembangan perangkat lunak.
             </p>
         </div>
 
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="certificate-info">
-                                    <span>Certificate</span>
+                                    <span>Sertifikat</span>
                                     <h3>{{ $certificate['title'] }}</h3>
                                 </div>
 

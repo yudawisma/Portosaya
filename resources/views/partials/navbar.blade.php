@@ -20,12 +20,12 @@
 
         <div class="nav-menu" id="nav-menu">
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#projects">Projects</a>
+                <a href="#home">Beranda</a>
+                <a href="#projects">Proyek</a>
                 <!-- <a href="#about">About</a> -->
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#certificate">Certificates</a>
+                <a href="#skills">Keahlian</a>
+                <a href="#experience">Pengalaman</a>
+                <a href="#certificate">Sertifikat</a>
             </div>
 
             <div class="nav-right">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-                <a href="#contact" class="nav-contact">Contact ↗</a>
+                <a href="#contact" class="nav-contact">Kontak ↗</a>
             </div>
         </div>
 

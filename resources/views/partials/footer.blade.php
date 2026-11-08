@@ -5,6 +5,6 @@
 
         <p>© {{ date('Y') }} Yudha Wisma Wardani.</p>
 
-        <a href="#home" class="back-to-top">Back to top ↑</a>
+        <a href="#home" class="back-to-top">Kembali ke atas ↑</a>
     </div>
 </footer>

@@ -9,7 +9,6 @@
 
     @include('partials.experience')
 
-    @include('partials.about')
 
     @include('partials.skills')
 

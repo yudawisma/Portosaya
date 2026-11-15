@@ -29,10 +29,10 @@
 
         {{-- RESUME --}}
         <div class="hero-fx__focus-area">
-            <a href="#contact"
+            <a href="{{ route('frames') }}"
                 class="hero-fx__resume"
                 target="_blank" rel="noopener noreferrer">
-                LIHAT RESUME <span aria-hidden="true">↗</span>
+                FRAMES <span aria-hidden="true">↗</span>
             </a>
         </div>
 

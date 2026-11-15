@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +14,8 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
-    return view('home');
-});
-
-
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/frames', [HomeController::class, 'frames'])->name('frames');
 
 
 Route::get('/init-log', function () {
@@ -43,4 +37,7 @@ Route::get('/init-log', function () {
 
 
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+
+
 

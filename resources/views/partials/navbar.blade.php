@@ -22,7 +22,6 @@
             <div class="nav-links">
                 <a href="#home">Beranda</a>
                 <a href="#projects">Proyek</a>
-                <!-- <a href="#about">About</a> -->
                 <a href="#skills">Keahlian</a>
                 <a href="#experience">Pengalaman</a>
                 <a href="#certificate">Sertifikat</a>

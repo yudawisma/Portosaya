@@ -29,7 +29,7 @@
 
         {{-- RESUME --}}
         <div class="hero-fx__focus-area">
-            <a href="{{ route('frames') }}"
+            <a href="https://framesportofolio.vercel.app"
                 class="hero-fx__resume"
                 target="_blank" rel="noopener noreferrer">
                 FRAMES <span aria-hidden="true">↗</span>
